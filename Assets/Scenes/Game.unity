@@ -599,6 +599,7 @@ MonoBehaviour:
   smoothTime: 0.4
   offSetY: 1.2
   offSetZ: 2.5
+  myCamera: {fileID: 360392704}
 --- !u!1001 &375122197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1493,8 +1494,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9850467, g: 1, b: 0.8066038, a: 1}
+  m_Intensity: 0.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1536,7 +1537,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.09
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -3371,7 +3372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2033922336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3459,7 +3460,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh91366
+  m_Name: pb_Mesh22690
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
