@@ -50,6 +50,14 @@ public class luigiScript : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
+        if(Input.GetKey(KeyCode.LeftShift)){
+            speed = 3f;
+        }
+        else{
+            speed = 2f;
+        }
+
+
         if (Input.GetKey(KeyCode.Q))
         {
             Application.Quit();
