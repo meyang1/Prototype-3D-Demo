@@ -54,7 +54,11 @@ public class luigiScript : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             speed = 4.5f;
+=======
+            speed = 3f;
+>>>>>>> parent of 13be9e9... Adjustments
 =======
             speed = 3f;
 >>>>>>> parent of 13be9e9... Adjustments
