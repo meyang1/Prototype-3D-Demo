@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 7827421b43e2ca547827d9be38413590
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 9939f042b0780514aaab4f3b13021f03
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: bd7dd5a48d6bf734b9e7b3c88d6dba1b
   m_configObjects: {}

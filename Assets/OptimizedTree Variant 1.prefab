@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6406677706854339657, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_SelectedEditorRenderState
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7215527586957730550, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_RootOrder
@@ -33,15 +33,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215527586957730550, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -10.13
       objectReference: {fileID: 0}
     - target: {fileID: 7215527586957730550, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 7215527586957730550, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 7215527586957730550, guid: 96a96dc3066b870448b8503090b07df7, type: 3}
       propertyPath: m_LocalRotation.w

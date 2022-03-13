@@ -106,8 +106,8 @@ MonoBehaviour:
   materialHash: 06a7bf13fbf8e29a66404d693d90ab0a61931520
   root:
     _uniqueID: 1
-    seed: 1234
-    _internalSeed: 2727
+    seed: 0
+    _internalSeed: 0
     m_Hash: 
     distributionFrequency: 1
     distributionMode: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   - spline:
       nodes: []
       tension: 0.5
-    seed: 3961
+    seed: 0
     animSeed: 0
     visible: 1
     triStart: 0

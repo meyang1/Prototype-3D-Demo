@@ -18,9 +18,9 @@ public class backboundary : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.name == "PlayerCharacter") { 
+        if (collision.gameObject.name == "PlayerCharacter") { 
     
             lvlmanager.LoadLevel("Game");
-       // }
+        }
     }
 }

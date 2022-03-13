@@ -1494,13 +1494,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.512
-  size:
-    overrideState: 1
-    value: 0.95
-  lumContrib:
-    overrideState: 1
     value: 1
+  size:
+    overrideState: 0
+    value: 1
+  lumContrib:
+    overrideState: 0
+    value: 0.8
 --- !u!114 &-2276345890844131081
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1553,7 +1553,7 @@ MonoBehaviour:
     value: 9.92
   softKnee:
     overrideState: 1
-    value: 0
+    value: 0.5
   clamp:
     overrideState: 0
     value: 65472
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1645,10 +1645,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.76
+    value: 0.86
   color:
     overrideState: 1
-    value: {r: 0.21982914, g: 0.7169812, b: 0.21982914, a: 1}
+    value: {r: 0.18876824, g: 0.3962264, b: 0.18876824, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
