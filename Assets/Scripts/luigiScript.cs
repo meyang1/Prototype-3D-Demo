@@ -64,13 +64,13 @@ public class luigiScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            animator.SetInteger("AnimState", 1); //Left
+            animator.SetInteger("AnimState", 1); //Right
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            animator.SetInteger("AnimState", 1);
+            animator.SetInteger("AnimState", 2);
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         else

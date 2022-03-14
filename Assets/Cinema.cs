@@ -16,11 +16,11 @@ public class Cinema : MonoBehaviour {
         
         if (Input.GetKey(KeyCode.E))
         {
-            cam.m_RecenterToTargetHeading.m_enabled = true;
+            //cam.m_RecenterToTargetHeading.m_enabled = true;
         }
         else
         {
-            cam.m_RecenterToTargetHeading.m_enabled = false;
+            //cam.m_RecenterToTargetHeading.m_enabled = false;
         }
     }
     public float GetAxisCustom(string axisName){

@@ -21,4 +21,8 @@ public class LevelManager : MonoBehaviour
 
         Application.Quit();
     }
+    void Awake () {
+     QualitySettings.vSyncCount = 0;  // VSync must be disabled
+     Application.targetFrameRate = 15;
+ }
 }
