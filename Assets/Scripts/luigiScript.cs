@@ -51,18 +51,29 @@ public class luigiScript : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         if(Input.GetKey(KeyCode.LeftShift)){
-            speed = 4f;
+            speed = 4.5f;
         }
         else{
             speed = 3f;
         }
-
-
         if (Input.GetKey(KeyCode.Q))
         {
             Application.Quit();
         }
-        if (Input.GetKey(KeyCode.D))
+
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            animator.SetInteger("AnimState", 3); //Left
+            //transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetInteger("AnimState", 3);
+            //transform.localRotation = Quaternion.Euler(0, 180, 0);
+        } 
+        
+        else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("AnimState", 1); //Right
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -78,22 +89,6 @@ public class luigiScript : MonoBehaviour
             animator.SetInteger("AnimState", 0); //Idle
         }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            animator.SetInteger("AnimState", 1); //Left
-            //transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetInteger("AnimState", 1);
-            //transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-        {  
-        }
-        else
-        {
-            animator.SetInteger("AnimState", 0);
-        }
+        
     }
 }
