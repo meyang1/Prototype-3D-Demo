@@ -51,7 +51,7 @@ public class luigiScript : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         if(Input.GetKey(KeyCode.LeftShift)){
-            speed = 4.5f;
+            speed = 4f;
         }
         else{
             speed = 3f;
