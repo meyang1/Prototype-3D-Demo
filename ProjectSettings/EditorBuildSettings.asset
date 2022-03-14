@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lose.unity
     guid: 9939f042b0780514aaab4f3b13021f03
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon.unity
     guid: bd7dd5a48d6bf734b9e7b3c88d6dba1b
   m_configObjects: {}
