@@ -1267,14 +1267,14 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 6.02
     m_SpeedMode: 0
-    m_MaxSpeed: 75
-    m_AccelTime: 0.05
+    m_MaxSpeed: 65
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
-    m_MinValue: -16
-    m_MaxValue: 16
+    m_MinValue: -17
+    m_MaxValue: 17
     m_Wrap: 0
     m_Recentering:
       m_enabled: 0
@@ -1291,8 +1291,8 @@ MonoBehaviour:
   m_HorizontalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 75
-    m_AccelTime: 0.05
+    m_MaxSpeed: 65
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
@@ -1556,7 +1556,7 @@ MonoBehaviour:
     Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 0
-    m_AccelTime: 0.2
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
