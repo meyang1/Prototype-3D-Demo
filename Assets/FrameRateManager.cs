@@ -6,7 +6,7 @@
      public int frameRate = 60;
  
      void Start() {
-         StartCoroutine(changeFramerate()); Application.targetFrameRate = 60;
+         StartCoroutine(changeFramerate()); Application.targetFrameRate = 10;
      }
      IEnumerator changeFramerate() {
          yield return new WaitForSeconds(1);
