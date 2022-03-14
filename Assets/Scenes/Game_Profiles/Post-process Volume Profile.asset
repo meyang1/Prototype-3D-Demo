@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
     value: 0
   brightness:
     overrideState: 1
-    value: 86
+    value: 75
   postExposure:
     overrideState: 0
     value: 0
@@ -79,8 +79,8 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   mixerRedOutGreenIn:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -2
   mixerRedOutBlueIn:
     overrideState: 0
     value: 0
@@ -748,7 +748,7 @@ MonoBehaviour:
       - 0.984375
       - 0.9921875
   hueVsHueCurve:
-    overrideState: 1
+    overrideState: 0
     value:
       curve:
         serializedVersion: 2
@@ -907,7 +907,7 @@ MonoBehaviour:
       - 0.5
       - 0.5
   hueVsSatCurve:
-    overrideState: 1
+    overrideState: 0
     value:
       curve:
         serializedVersion: 2
@@ -1093,7 +1093,7 @@ MonoBehaviour:
       - 0.66807395
       - 0.6768413
   satVsSatCurve:
-    overrideState: 1
+    overrideState: 0
     value:
       curve:
         serializedVersion: 2
@@ -1243,7 +1243,7 @@ MonoBehaviour:
       - 0.61452514
       - 0.61452514
   lumVsSatCurve:
-    overrideState: 1
+    overrideState: 0
     value:
       curve:
         serializedVersion: 2
@@ -1419,7 +1419,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.489
+    value: 0.552
   smoothness:
     overrideState: 1
     value: 1
@@ -1448,19 +1448,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 53.547874, y: 98.54788}
+    value: {x: 53.999996, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0.7
+    value: 0.5
   maxLuminance:
     overrideState: 1
-    value: 0.7
+    value: 1
   keyValue:
     overrideState: 0
     value: 1
