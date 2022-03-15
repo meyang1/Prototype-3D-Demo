@@ -1,14 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections; 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-     public void LoadLevel(string level)
+    public void LoadLevel(int sceneIndex)
     {
-        SceneManager.LoadScene(level);
+        StartCoroutine(LoadAsynchronously(sceneIndex));
     }
+
+    IEnumerator LoadAsynchronously (int sceneIndex){
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        while(!operation.isDone){
+            Debug.Log(operation.progress);
+
+            yield return null; //wait until the next frame 
+        }
+    }
+    
+
+    public void LoadNextScene(){
+        
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
+        
+    }
+    public void LoadLastScene(){
+        
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex-1);
+        
+    }
+    
     public void QuitGame()
     {
 
@@ -21,8 +44,5 @@ public class LevelManager : MonoBehaviour
 
         Application.Quit();
     }
-    void Awake () {
-     QualitySettings.vSyncCount = 0;  // VSync must be disabled
-     Application.targetFrameRate = 15;
- }
+    
 }

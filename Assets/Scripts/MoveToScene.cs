@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MoveToScene : MonoBehaviour
 {
     public LevelManager lvlmanager;
-    public string str = "Game";
+    public int str;
     bool check = false;
     bool m_SceneLoaded;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class MoveToScene : MonoBehaviour
         // LoadSceneButton();
         lvlmanager.LoadLevel(str);
     }
-    IEnumerator LoadInScene()
+    /*IEnumerator LoadInScene()
     {
         SceneManager.LoadScene(str, LoadSceneMode.Additive);
         yield return new WaitForSeconds(3);
@@ -33,7 +33,7 @@ public class MoveToScene : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(str));
         lvlmanager.LoadLevel(str);
         check = false;
-    }
+    }*/
     void LoadSceneButton()
     {
         // Check that the second Scene hasn't been added yet
@@ -58,7 +58,7 @@ public class MoveToScene : MonoBehaviour
         if (m_SceneLoaded == true)
         {
             // Set Scene2 as the active Scene
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(str));
+            //SceneManager.SetActiveScene(SceneManager.GetSceneByName(str));
 
             // Ouput the name of the active Scene
             // See now that the name is updated
