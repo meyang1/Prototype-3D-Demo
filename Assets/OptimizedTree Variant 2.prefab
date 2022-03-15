@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 7138533129550566638, guid: b6b241ce693b6864797651076b29d6a1, type: 3}
     - target: {fileID: 7528023385914172406, guid: b6b241ce693b6864797651076b29d6a1, type: 3}
       propertyPath: m_SelectedEditorRenderState
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8883340200276493541, guid: b6b241ce693b6864797651076b29d6a1, type: 3}
       propertyPath: m_Name
