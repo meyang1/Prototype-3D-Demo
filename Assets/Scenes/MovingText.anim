@@ -30,6 +30,7 @@ AnimationClip:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         time: 8.5
         value: 0
         inSlope: 0
@@ -47,6 +48,16 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+=======
+        time: 1.875
+        value: {x: -2.519, y: -373.138, z: 24.144}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+>>>>>>> parent of aba2265... Starting Menu
 =======
         time: 1.875
         value: {x: -2.519, y: -373.138, z: 24.144}
@@ -108,7 +119,11 @@ AnimationClip:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_StopTime: 9.75
+=======
+    m_StopTime: 1.875
+>>>>>>> parent of aba2265... Starting Menu
 =======
     m_StopTime: 1.875
 >>>>>>> parent of aba2265... Starting Menu
@@ -141,8 +156,11 @@ AnimationClip:
         value: -2.168
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> parent of aba2265... Starting Menu
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -171,6 +189,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -13.921
+<<<<<<< HEAD
 >>>>>>> parent of aba2265... Starting Menu
         inSlope: 0
         outSlope: 0
@@ -202,6 +221,8 @@ AnimationClip:
         time: 0
         value: -13.921
 >>>>>>> parent of aba2265... Starting Menu
+=======
+>>>>>>> parent of aba2265... Starting Menu
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -210,6 +231,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.875
+<<<<<<< HEAD
 <<<<<<< HEAD
         value: -2.519
         inSlope: 0
@@ -247,6 +269,8 @@ AnimationClip:
 >>>>>>> parent of aba2265... Starting Menu
 =======
 >>>>>>> parent of aba2265... Starting Menu
+=======
+>>>>>>> parent of aba2265... Starting Menu
         value: -373.138
         inSlope: 0
         outSlope: 0
@@ -269,6 +293,9 @@ AnimationClip:
         value: 24.176
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of aba2265... Starting Menu
+=======
 >>>>>>> parent of aba2265... Starting Menu
 =======
 >>>>>>> parent of aba2265... Starting Menu
@@ -284,8 +311,13 @@ AnimationClip:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         time: 9.75
         value: 1
+=======
+        time: 1.875
+        value: 24.144
+>>>>>>> parent of aba2265... Starting Menu
 =======
         time: 1.875
         value: 24.144

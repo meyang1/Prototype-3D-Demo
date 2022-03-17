@@ -61,3 +61,13 @@ crashlytics-build.properties
 Assets/Scripts/luigiScript.cs
 Assets/Scripts/luigiScript.cs
 Assets/Scripts/luigiScript.cs
+Assets/Scenes/Adventures.anim
+Assets/Scenes/Fade.anim
+Assets/Scenes/MovingText.anim
+Assets/Scenes/Music.anim
+Assets/Scenes/Music.anim.meta
+Assets/Scenes/Music.controller
+Assets/Scenes/Music.controller.meta
+Assets/Scenes/Start.unity
+Assets/Scenes/Team Nintendo.anim
+UserSettings/EditorUserSettings.asset
