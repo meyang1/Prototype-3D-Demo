@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1adeaca8466f7b04ea0b0a9d80267bec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -88,7 +88,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ShadowStrength: 1
-    - _Shininess: 0.1
+    - _Shininess: 0.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SquashAmount: 1
@@ -98,7 +98,7 @@ Material:
     - _WindQuality: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6981132, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.46226418, g: 0.23331259, b: 0.23331259, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
