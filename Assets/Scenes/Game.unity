@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.7372549, g: 0.68235296, b: 0.6862745, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.036
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -650,7 +650,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 1.9
-  far clip plane: 150.59
+  far clip plane: 73
   field of view: 32
   orthographic: 0
   orthographic size: 5
@@ -1985,10 +1985,10 @@ WindZone:
   m_Enabled: 1
   m_Mode: 1
   m_Radius: 66.8
-  m_WindMain: 0.3
-  m_WindTurbulence: 0.025
-  m_WindPulseMagnitude: 6
-  m_WindPulseFrequency: 0
+  m_WindMain: 0.12
+  m_WindTurbulence: 0.2
+  m_WindPulseMagnitude: 5
+  m_WindPulseFrequency: 1
 --- !u!4 &1414023328
 Transform:
   m_ObjectHideFlags: 0
@@ -3999,7 +3999,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55022
+  m_Name: pb_Mesh37798
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4331,6 +4331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5139117585146777310, guid: 19e0b2d371dea8144a36452b088e6fb3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19e0b2d371dea8144a36452b088e6fb3, type: 3}
 --- !u!1001 &3409470883390827652
@@ -4344,6 +4348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM FreeLook1
       objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112464, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_Follow
       value: 
@@ -4352,6 +4360,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 4286241150950636175}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 73
+      objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112466, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -4431,6 +4443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5553001975819797838, guid: 9d78afe94c977d8469c5d05c3a0fe81a, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 8533178344723398144, guid: 9d78afe94c977d8469c5d05c3a0fe81a, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
