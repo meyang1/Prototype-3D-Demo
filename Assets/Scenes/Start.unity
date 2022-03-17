@@ -583,7 +583,11 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HighlightedColor: {r: 0.77254903, g: 0.6313726, b: 0.76862746, a: 1}
+=======
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> parent of aba2265... Starting Menu
 =======
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
 >>>>>>> parent of aba2265... Starting Menu
@@ -2251,7 +2255,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Text: THE ADVENTURES OF EYE-VON
+=======
+  m_Text: The Adventure of Eyevon
+>>>>>>> parent of aba2265... Starting Menu
 =======
   m_Text: The Adventure of Eyevon
 >>>>>>> parent of aba2265... Starting Menu
