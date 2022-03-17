@@ -111,22 +111,22 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 3.36
+    value: 20.6
   threshold:
     overrideState: 0
-    value: 54.6
+    value: 33.23
   softKnee:
     overrideState: 1
-    value: 0.893
+    value: 0.496
   clamp:
     overrideState: 1
     value: 65472
   diffusion:
     overrideState: 1
-    value: 7.48
+    value: 5.98
   anamorphicRatio:
     overrideState: 1
-    value: 0
+    value: -0.44
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -134,12 +134,12 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   dirtTexture:
-    overrideState: 1
+    overrideState: 0
     value: {fileID: 2800000, guid: 07f50d94527fcd9419f13049422b2eaf, type: 3}
     defaultState: 1
   dirtIntensity:
-    overrideState: 1
-    value: 0
+    overrideState: 0
+    value: 15.76
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
     overrideState: 1
     value: 97
   kernelSize:
-    overrideState: 1
+    overrideState: 0
     value: 1
 --- !u!114 &3035665176703583389
 MonoBehaviour:

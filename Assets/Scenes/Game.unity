@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.7372549, g: 0.68235296, b: 0.6862745, a: 1}
+  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.036
+  m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -547,6 +547,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 958522245157775332, guid: 60ce6113ead6d33418712ecf66c3b2a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 958522245157775332, guid: 60ce6113ead6d33418712ecf66c3b2a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -540
       objectReference: {fileID: 0}
@@ -650,7 +654,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 1.9
-  far clip plane: 73
+  far clip plane: 71
   field of view: 32
   orthographic: 0
   orthographic size: 5
@@ -1106,7 +1110,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5c093e7f4d8e0548923458bcd93c1e2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aefc6b1fe3781394bada34f1d9469904, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1985,10 +1989,10 @@ WindZone:
   m_Enabled: 1
   m_Mode: 1
   m_Radius: 66.8
-  m_WindMain: 0.12
-  m_WindTurbulence: 0.2
-  m_WindPulseMagnitude: 5
-  m_WindPulseFrequency: 1
+  m_WindMain: 0.3
+  m_WindTurbulence: 0.025
+  m_WindPulseMagnitude: 6
+  m_WindPulseFrequency: 0
 --- !u!4 &1414023328
 Transform:
   m_ObjectHideFlags: 0
@@ -2225,6 +2229,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1576725056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3409470883757112464, guid: b719deebed3f737409d0fa563c518861, type: 3}
+  m_PrefabInstance: {fileID: 3409470883390827652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1576725059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576725056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.6
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0.6
+  m_Damping: 5.93
+  m_DampingWhenOccluded: 5.81
+  m_OptimalTargetDistance: 0
+--- !u!114 &1576725060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576725056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FocusTracksTarget: 0
+  m_FocusTracking: 0
+  m_FocusTarget: {fileID: 4286241150950636175}
+  m_FocusOffset: 2.1
+  m_Profile: {fileID: 11400000, guid: b20b8f40f2c6af141afe2e0cb47ccd74, type: 2}
 --- !u!1 &1589239105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3825,6 +3881,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663081789}
   m_CullTransparentMesh: 1
+--- !u!1 &1796437968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3409470883855461808, guid: b719deebed3f737409d0fa563c518861, type: 3}
+  m_PrefabInstance: {fileID: 3409470883390827652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1796437973
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796437968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 90a11b0bd26895e4ab6d8538b8d1e699, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 0.4
+  mNoiseOffsets: {x: 700.82166, y: 30.366089, z: 800.5309}
 --- !u!4 &1882920120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3589513545527214797, guid: 12d7fd1913076dd4699408e1fc23a1bf, type: 3}
@@ -3999,7 +4077,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37798
+  m_Name: pb_Mesh55022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4348,10 +4426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM FreeLook1
       objectReference: {fileID: 0}
-    - target: {fileID: 3409470883757112464, guid: b719deebed3f737409d0fa563c518861, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_Follow
       value: 
@@ -4361,8 +4435,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4286241150950636175}
     - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_XAxis.m_Wrap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_XAxis.m_MaxValue
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_XAxis.m_MinValue
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_Lens.FarClipPlane
-      value: 73
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_RecenterToTargetHeading.m_enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112466, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_RootOrder
@@ -4408,6 +4502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3409470883855461810, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_HorizontalAxis.m_MaxSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3409470883995928716, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_LookAt
       value: 
@@ -4443,10 +4541,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5553001975819797838, guid: 9d78afe94c977d8469c5d05c3a0fe81a, type: 3}
-      propertyPath: m_StepOffset
-      value: 0.16
-      objectReference: {fileID: 0}
     - target: {fileID: 8533178344723398144, guid: 9d78afe94c977d8469c5d05c3a0fe81a, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter

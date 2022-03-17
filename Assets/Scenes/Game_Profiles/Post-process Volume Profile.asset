@@ -1243,7 +1243,7 @@ MonoBehaviour:
       - 0.61452514
       - 0.61452514
   lumVsSatCurve:
-    overrideState: 1
+    overrideState: 0
     value:
       curve:
         serializedVersion: 2
@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -1519,13 +1519,13 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 2.77
+    value: 3.19
   aperture:
     overrideState: 1
     value: 4.8
   focalLength:
     overrideState: 1
-    value: 43
+    value: 47
   kernelSize:
     overrideState: 0
     value: 1
@@ -1645,10 +1645,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.13
+    value: 0.64
   color:
     overrideState: 1
-    value: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+    value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
@@ -1663,7 +1663,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 2.18
+    value: 2.22
   directLightingStrength:
     overrideState: 0
     value: 0
