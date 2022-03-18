@@ -1697,7 +1697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1224339340
 Transform:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ WindZone:
   m_Mode: 1
   m_Radius: 66.8
   m_WindMain: 0.3
-  m_WindTurbulence: 0.025
+  m_WindTurbulence: 0.05
   m_WindPulseMagnitude: 6
   m_WindPulseFrequency: 0
 --- !u!4 &1414023328
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.6
+  m_MinimumDistanceFromTarget: 2
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
@@ -2261,8 +2261,8 @@ MonoBehaviour:
   m_Strategy: 0
   m_MaximumEffort: 4
   m_SmoothingTime: 0.6
-  m_Damping: 5.93
-  m_DampingWhenOccluded: 5.81
+  m_Damping: 3
+  m_DampingWhenOccluded: 2.7
   m_OptimalTargetDistance: 0
 --- !u!114 &1576725060
 MonoBehaviour:
@@ -4077,7 +4077,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55022
+  m_Name: pb_Mesh67136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4411,7 +4411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5139117585146777310, guid: 19e0b2d371dea8144a36452b088e6fb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19e0b2d371dea8144a36452b088e6fb3, type: 3}
@@ -4505,6 +4505,14 @@ PrefabInstance:
     - target: {fileID: 3409470883855461810, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_HorizontalAxis.m_MaxSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883855461811, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_XDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409470883855461811, guid: b719deebed3f737409d0fa563c518861, type: 3}
+      propertyPath: m_YDamping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3409470883995928716, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_LookAt
