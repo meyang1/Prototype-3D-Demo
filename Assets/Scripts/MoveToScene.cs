@@ -23,7 +23,9 @@ public class MoveToScene : MonoBehaviour
     void OnCollisionEnter(Collision character)
     {
         // LoadSceneButton();
+        if(character.gameObject.name == "PlayerCharacter"){
         lvlmanager.LoadLevel(str);
+        }
     }
     /*IEnumerator LoadInScene()
     {

@@ -27,7 +27,7 @@ MonoBehaviour:
     value: {x: 0.65, y: 0.3}
   intensity:
     overrideState: 1
-    value: 0.267
+    value: 0.101
   smoothness:
     overrideState: 1
     value: 0.713
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -204,17 +204,17 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   colored:
-    overrideState: 1
+    overrideState: 0
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 0.49
   size:
     overrideState: 1
-    value: 1.75
+    value: 0.76
   lumContrib:
     overrideState: 1
-    value: 0.901
+    value: 0.311
 --- !u!114 &3756433050854602180
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -233,13 +233,13 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 53.999935, y: 99}
+    value: {x: 62.19161, y: 69.35564}
   minLuminance:
     overrideState: 1
-    value: 0.21
+    value: 0.3
   maxLuminance:
     overrideState: 1
-    value: 7.53
+    value: 3
   keyValue:
     overrideState: 1
     value: 1

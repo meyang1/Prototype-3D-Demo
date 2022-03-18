@@ -1454,13 +1454,13 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 53.999996, y: 99}
+    value: {x: 54, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0.5
+    value: 1.2
   maxLuminance:
     overrideState: 1
-    value: 1
+    value: 5.4
   keyValue:
     overrideState: 0
     value: 1
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
