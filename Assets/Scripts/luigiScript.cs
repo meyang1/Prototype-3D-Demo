@@ -13,6 +13,7 @@ public class luigiScript : MonoBehaviour
 {
     CharacterController characterController;
     Animator animator;
+    public GameObject menu;
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -90,5 +91,19 @@ public class luigiScript : MonoBehaviour
         }
 
         
+        bool menuOpen = false;
+        //Menu
+        if(Input.GetKeyDown(KeyCode.Escape) && menuOpen == false){
+            menu.SetActive(true);
+        }
+        else if(Input.GetKeyUp(KeyCode.Escape) && menuOpen == false){      
+            menuOpen = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && menuOpen == true){
+            menu.SetActive(false);
+        }
+        else if(Input.GetKeyUp(KeyCode.Escape) && menuOpen == false){
+            menuOpen = false;
+        }
     }
 }

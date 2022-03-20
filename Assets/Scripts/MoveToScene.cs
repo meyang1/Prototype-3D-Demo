@@ -6,7 +6,6 @@ public class MoveToScene : MonoBehaviour
 {
     public LevelManager lvlmanager;
     public int str;
-    bool check = false;
     bool m_SceneLoaded;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class MoveToScene : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter(Collision character)
+    void OnTriggerEnter(Collider character)
     {
         // LoadSceneButton();
         if(character.gameObject.name == "PlayerCharacter"){

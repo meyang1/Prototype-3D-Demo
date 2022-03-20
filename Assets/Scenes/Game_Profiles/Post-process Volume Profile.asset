@@ -1513,19 +1513,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   focusDistance:
     overrideState: 1
-    value: 3.19
+    value: 10
   aperture:
     overrideState: 1
-    value: 4.8
+    value: 4.1
   focalLength:
     overrideState: 1
-    value: 47
+    value: 97
   kernelSize:
     overrideState: 0
     value: 1
@@ -1541,30 +1541,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 7.34
+    value: 19.4
   threshold:
     overrideState: 1
-    value: 9.92
+    value: 1
   softKnee:
-    overrideState: 1
-    value: 0.5
+    overrideState: 0
+    value: 0
   clamp:
     overrideState: 0
-    value: 65472
+    value: 65470.25
   diffusion:
     overrideState: 1
     value: 1
   anamorphicRatio:
     overrideState: 0
-    value: 0
+    value: -1
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
