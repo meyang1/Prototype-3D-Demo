@@ -1398,7 +1398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49786
+  m_Name: pb_Mesh20024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1636,7 +1636,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360392702}
-  m_LocalRotation: {x: 0.052510247, y: 0.0000000011587432, z: 6.0941294e-11, w: 0.9986204}
+  m_LocalRotation: {x: 0.052510247, y: -9.443984e-10, z: -4.9670868e-11, w: 0.9986204}
   m_LocalPosition: {x: 45.1, y: 1.1700001, z: 227.98999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6989,7 +6989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1738370455
 Transform:
   m_ObjectHideFlags: 0
@@ -6998,7 +6998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738370454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.2285, y: 1.27, z: 234.30754}
+  m_LocalPosition: {x: 48.2285, y: 1.4, z: 234.30754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 43115610}
@@ -7871,7 +7871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_Lens.FarClipPlane
-      value: 71.2
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3409470883757112465, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_RecenterToTargetHeading.m_enabled
@@ -7943,15 +7943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409470884059018424, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.032893796
+      value: 0.03289379
       objectReference: {fileID: 0}
     - target: {fileID: 3409470884059018424, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017330898
+      value: 0.0000000173309
       objectReference: {fileID: 0}
     - target: {fileID: 3409470884059018424, guid: b719deebed3f737409d0fa563c518861, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.703877e-10
+      value: -5.703877e-10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b719deebed3f737409d0fa563c518861, type: 3}
