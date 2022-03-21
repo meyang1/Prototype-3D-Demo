@@ -19,6 +19,9 @@ public class luigiScript : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
+    private float canJump = 0f;
+    public float timeTillJump = 0.25f;
+
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
@@ -37,19 +40,22 @@ public class luigiScript : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-            if (Input.GetButton("Jump"))
+            if (Input.GetButtonDown("Jump")&& Time.time > canJump)
             {
-                moveDirection.y = jumpSpeed;
+                moveDirection.y = jumpSpeed*6/5;
+                canJump = Time.time + timeTillJump; 
             }
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
                 moveDirection.x = jumpSpeed;
+                canJump = Time.time + .24f; 
             }
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q)&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
                 moveDirection.x = -jumpSpeed;
+                canJump = Time.time + .24f; 
             }
 
         }
