@@ -42,7 +42,7 @@ public class luigiScript : MonoBehaviour
 
             if (Input.GetButtonDown("Jump")&& Time.time > canJump)
             {
-                moveDirection.y = jumpSpeed*6/5;
+                moveDirection.y = 7;
                 canJump = Time.time + timeTillJump; 
             }
             if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
