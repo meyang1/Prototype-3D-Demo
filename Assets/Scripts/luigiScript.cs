@@ -41,6 +41,17 @@ public class luigiScript : MonoBehaviour
             {
                 moveDirection.y = jumpSpeed;
             }
+            if (Input.GetKey(KeyCode.E))
+            {
+                moveDirection.y = jumpSpeed;
+                moveDirection.x = jumpSpeed;
+            }
+            if (Input.GetKey(KeyCode.Q))
+            {
+                moveDirection.y = jumpSpeed;
+                moveDirection.x = -jumpSpeed;
+            }
+
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -56,10 +67,6 @@ public class luigiScript : MonoBehaviour
         }
         else{
             speed = 2f;
-        }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            Application.Quit();
         }
 
 
