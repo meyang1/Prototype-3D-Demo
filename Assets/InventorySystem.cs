@@ -7,11 +7,11 @@ public class InventorySystem : MonoBehaviour
 {
 
     public static GameObject[] Inventory;
-    public position = 0;
+    public int position = 0;
     // Start is called before the first frame update
     void Start()
     {
-        Inventory = new float[20];
+        Inventory = new GameObject[20];
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class InventorySystem : MonoBehaviour
 
     public void addObject(GameObject item)
     {
-        Inventory[position];
+        Inventory[position] = item;
     }
 }
