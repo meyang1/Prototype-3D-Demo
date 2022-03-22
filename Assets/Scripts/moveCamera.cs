@@ -52,7 +52,7 @@ public class moveCamera : MonoBehaviour
         if (collision.gameObject.name == "Cube")
         {
             checkCollision = true;
-            //offSetZ = 4;
+            //offSetZ = 4; //(only use if presently fixed camera)
             //offSetY = 1;
         }
         if (myCamera.fieldOfView > 30.5f)

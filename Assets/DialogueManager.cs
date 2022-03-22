@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray()){
             dialogueText.text += letter;
-            yield return 12; // wait one frame
+            yield return null; // wait one frame
         }
     }
 

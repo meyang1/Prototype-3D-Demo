@@ -33,7 +33,7 @@ public class MoveToScene : MonoBehaviour
         //yield return 0; // wait a frame, so it can finish loading
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(str));
         lvlmanager.LoadLevel(str);
-        check = false;
+        check = false; //Load in scene to create
     }*/
     void LoadSceneButton()
     {
