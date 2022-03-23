@@ -76,32 +76,31 @@ public class luigiScript : MonoBehaviour
         }
 
 
+        animator.SetInteger("AnimState", 0); 
         if (Input.GetKey(KeyCode.W))
         {
-            animator.SetInteger("AnimState", 3); //Left
+            animator.SetInteger("AnimState", 0); //Left
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            animator.SetInteger("AnimState", 3);
+            animator.SetInteger("AnimState", 0);
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         } 
         
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("AnimState", 1); //Right
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("AnimState", 2);
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        else
-        {
-            animator.SetInteger("AnimState", 0); //Idle
-        }
+        //Idle
+        
 
         
         bool menuOpen = false;
