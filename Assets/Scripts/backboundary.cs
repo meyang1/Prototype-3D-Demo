@@ -20,7 +20,7 @@ public class backboundary : MonoBehaviour
     {
         if (collision.gameObject.name == "PlayerCharacter") { 
     
-            lvlmanager.LoadLevel(1);
+            lvlmanager.LoadLevel(0);
         }
     }
 }
