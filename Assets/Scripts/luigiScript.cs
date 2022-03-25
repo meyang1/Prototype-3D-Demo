@@ -75,30 +75,38 @@ public class luigiScript : MonoBehaviour
             speed = 2f;
         }
 
-
-        animator.SetInteger("AnimState", 0); 
+        bool keyDown = false;
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("AnimState", 0); //Left
+            keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
             animator.SetInteger("AnimState", 0);
+            keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         } 
         
         if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("AnimState", 1); //Right
+            keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
         if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("AnimState", 2);
+            keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
+        
+        if(keyDown == false){
+            animator.SetInteger("AnimState", 0);
+        }
+        
         //Idle
         
 
