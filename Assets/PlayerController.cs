@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask movementMask;
     PlayerMotor motor;
     public GameObject followObject;
+    public float health = 100; 
     Camera cam;
 
     Animator animator;
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour
             motor.MoveToPoint(followObject.transform.position);
 
         }
+
+        if(health<=0){
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -43,6 +48,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "PlayerCharacter") { 
     
             animator.SetInteger("AnimState", 1); //hit
+        }
+        if(collision.gameObject.name == "SwordCube"){
+            health -= 10;
+            animator.SetInteger("AnimState", 4);
         }
     }
     void OnCollisionStay(Collision collision)
@@ -58,4 +67,5 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("AnimState", 0); //idle
         }
     }
+    
 }

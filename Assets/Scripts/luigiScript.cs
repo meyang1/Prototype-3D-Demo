@@ -103,7 +103,7 @@ public class luigiScript : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         
-        if(Input.GetKey(KeyCode.F)){
+        if(Input.GetMouseButton(0)){
             animator.SetInteger("AnimState", 3);
             keyDown = true;
         }
