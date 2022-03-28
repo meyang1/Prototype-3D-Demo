@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
 
 
     public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback; //different methods subscribed to this event
 
     public int space = 20;
 
@@ -38,6 +39,9 @@ public class Inventory : MonoBehaviour
             }
             items.Add(item);
 
+            if(onItemChangedCallback != null) 
+                onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI
+
         }
         return true;
     }
@@ -45,5 +49,7 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI
     }
 }

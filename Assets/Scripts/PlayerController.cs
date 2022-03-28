@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit; //store what is being clicked on/hit
 
-            if (Physics.Raycast(ray, out hit, 100, movementMask))
+            if (Physics.Raycast(ray, out hit, 400, movementMask))
             { //range to allow clicks and mask
                 Debug.Log("We hit " + hit.collider.name + " " + hit.point);
 
@@ -91,24 +91,25 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "PlayerCharacter") { 
+        if (collision.gameObject.tag == "Cube") { 
     
             animator.SetInteger("AnimState", 1); //hit
         }
-        if(collision.gameObject.name == "SwordCube"){
+        if(collision.gameObject.tag == "Cube")
+        {
             health -= 10;
             animator.SetInteger("AnimState", 4);
         }
     }
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.name == "PlayerCharacter") { 
+        if (collision.gameObject.tag == "Cube") { 
     
             animator.SetInteger("AnimState", 1); //hit
         }
     }
     void OnCollisionExit(Collision collision){
-        if (collision.gameObject.name == "PlayerCharacter") { 
+        if (collision.gameObject.tag == "Cube") { 
     
             animator.SetInteger("AnimState", 0); //idle
         }
