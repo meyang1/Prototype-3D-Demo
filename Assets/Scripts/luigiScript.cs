@@ -17,10 +17,14 @@ public class luigiScript : MonoBehaviour
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
+    public float dashSpeedX = 6.0f;
+    public float dashSpeedY = 6.0f;
+
     public float gravity = 20.0f;
 
     private float canJump = 0f;
     public float timeTillJump = 0.25f;
+    public float timeTillDash = 1f;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -42,10 +46,11 @@ public class luigiScript : MonoBehaviour
 
             if (Input.GetButtonDown("Jump")&& Time.time > canJump)
             {
-                moveDirection.y = 7;
+                moveDirection.y = jumpSpeed;
                 canJump = Time.time + timeTillJump; 
+
             }
-            if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
+            /*if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
                 moveDirection.x = jumpSpeed;
@@ -56,7 +61,8 @@ public class luigiScript : MonoBehaviour
                 moveDirection.y = jumpSpeed;
                 moveDirection.x = -jumpSpeed;
                 canJump = Time.time + .24f; 
-            }
+            }*/
+
 
         }
 
@@ -68,14 +74,22 @@ public class luigiScript : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.LeftShift)){
-            speed = 3f;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 4f;
+            animator.speed = 1.5f;
         }
-        else{
-            speed = 2f;
+        else
+        {
+            speed = 2.5f;
+            animator.speed = 1f;
         }
 
-        bool keyDown = false;
+
+
+
+            bool keyDown = false;
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("AnimState", 0); //Left
@@ -86,6 +100,7 @@ public class luigiScript : MonoBehaviour
         {
             animator.SetInteger("AnimState", 0);
             keyDown = true;
+
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         } 
         
@@ -93,6 +108,15 @@ public class luigiScript : MonoBehaviour
         {
             animator.SetInteger("AnimState", 1); //Right
             keyDown = true;
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (Time.time > canJump)
+                {
+                    moveDirection.y = dashSpeedY;
+                    moveDirection.x = dashSpeedX;
+                    canJump = Time.time + timeTillDash;
+                }
+            }
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
@@ -100,6 +124,15 @@ public class luigiScript : MonoBehaviour
         {
             animator.SetInteger("AnimState", 2);
             keyDown = true;
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (Time.time > canJump)
+                {
+                    moveDirection.y = dashSpeedY;
+                    moveDirection.x = -dashSpeedX;
+                    canJump = Time.time + timeTillDash;
+                }
+            }
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         
