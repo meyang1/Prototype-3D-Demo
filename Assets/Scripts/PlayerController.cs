@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     
     
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Cube") { 
     
@@ -130,5 +130,5 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.transform.parent = null;
         }
     }
-    
+    */
 }
