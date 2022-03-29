@@ -165,4 +165,30 @@ public class luigiScript : MonoBehaviour
             menuOpen = false;
         }
     }
+
+    /*void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Partner")
+        {
+            Debug.Log("We collided with " + collision.gameObject.name);
+            collision.gameObject.transform.SetParent(gameObject.transform, true);
+        }
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Partner")
+        {
+            collision.gameObject.transform.SetParent(gameObject.transform, true);
+            //collision.gameObject.transform.position.SetParent(gameObject.transform.position.true);
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Partner")
+        {
+            Debug.Log("We exit collision with " + collision.gameObject.name);
+            collision.gameObject.transform.parent = null;
+        }
+    }
+    */
 }

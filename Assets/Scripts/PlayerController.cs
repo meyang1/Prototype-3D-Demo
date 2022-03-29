@@ -87,18 +87,25 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
+    
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Cube") { 
     
             animator.SetInteger("AnimState", 1); //hit
         }
+        
         if(collision.gameObject.tag == "Cube")
         {
             health -= 10;
             animator.SetInteger("AnimState", 4);
+        }
+
+        if(collision.gameObject.tag == "Player")   
+        {
+            Debug.Log("We collided with " + collision.gameObject.name);
+            collision.gameObject.transform.SetParent(gameObject.transform, true);
         }
     }
     void OnCollisionStay(Collision collision)
@@ -107,11 +114,20 @@ public class PlayerController : MonoBehaviour
     
             animator.SetInteger("AnimState", 1); //hit
         }
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.transform.SetParent(gameObject.transform, true);
+        }
     }
     void OnCollisionExit(Collision collision){
         if (collision.gameObject.tag == "Cube") { 
     
             animator.SetInteger("AnimState", 0); //idle
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("We exit collision with " + collision.gameObject.name);
+            collision.gameObject.transform.parent = null;
         }
     }
     
