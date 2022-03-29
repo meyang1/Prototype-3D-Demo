@@ -9,4 +9,11 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
 
+    public virtual void Use() //not implementing functionality b/c different uses for different items; allows you to derive for each one
+    {
+        //Use the item
+        //Something might happen
+
+        Debug.Log("Using " + name);
+    }
 }
