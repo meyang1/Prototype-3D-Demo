@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Camera cam;
 
     public Interactable focus;
+    public Interactable defaultFocus;
 
     Animator animator;
     void Start()
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit; //store what is being clicked on/hit
 
-            if (Physics.Raycast(ray, out hit, 400, movementMask))
+            if (Physics.Raycast(ray, out hit, 200, movementMask))
             { //range to allow clicks and mask
                 Debug.Log("We hit " + hit.collider.name + " " + hit.point);
 
@@ -58,10 +59,15 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-      
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SetFocus(defaultFocus);
+
+        }
+
 
         //if(health<=0){
-            //Destroy(gameObject);
+        //Destroy(gameObject);
         //
     }
 
