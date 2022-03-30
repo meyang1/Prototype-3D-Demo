@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 // This script moves the character controller forward
 // and sideways based on the arrow keys.
 // It also jumps when pressing space.
@@ -14,6 +15,9 @@ public class luigiScript : MonoBehaviour
     CharacterController characterController;
     Animator animator;
     public GameObject menu;
+    public GameObject Sword;
+
+    public float SwordDelay = 1.0f;
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -137,11 +141,19 @@ public class luigiScript : MonoBehaviour
         }
         
         if(Input.GetMouseButton(0)){    
-            animator.SetInteger("AnimState", 3);
             keyDown = true;
             speed = 2.5f;
         }
+        if (Input.GetKey(KeyCode.F))
+        {
+            Sword.GetComponent<Renderer>().enabled = true;
+        }
+        else
+        {
 
+            Sword.GetComponent<Renderer>().enabled = false;
+        }
+        
         if(keyDown == false){
             animator.SetInteger("AnimState", 0);
         }
@@ -165,7 +177,12 @@ public class luigiScript : MonoBehaviour
             menuOpen = false;
         }
     }
-
+    IEnumerator SetSword(float delay)
+    {
+        Sword.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        Sword.SetActive(false);
+    }
     /*void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Partner")

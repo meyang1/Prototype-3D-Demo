@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             return; // accessing to check whether currently hovering over UI, then exit
         }
-        if (Input.GetMouseButton(0) && motor!= null && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetMouseButton(0) && motor!= null && Input.GetKey(KeyCode.LeftControl))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit; //store what is being clicked on/hit
