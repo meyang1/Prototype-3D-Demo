@@ -16,6 +16,7 @@ public class luigiScript : MonoBehaviour
     Animator animator;
     public GameObject menu;
     public GameObject Sword;
+    public GameObject ActualSword;
 
     public float SwordDelay = 1.0f;
 
@@ -86,7 +87,7 @@ public class luigiScript : MonoBehaviour
         }
         else
         {
-            speed = 2.5f; //2
+            speed = 3f; //2
             animator.speed = 1f;
         }
 
@@ -147,11 +148,13 @@ public class luigiScript : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
+            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
         }
         else
         {
+            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 0);
 
-            Sword.GetComponent<Renderer>().enabled = false;
+            Sword.GetComponent<Renderer>().enabled = true;
         }
         
         if(keyDown == false){
