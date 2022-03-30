@@ -44,6 +44,15 @@ public class Interactable : MonoBehaviour
         }
     } 
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "SwordPoint")
+        {
+            Interact();
+            hasInteracted = true;
+        }
+    }
+
     public void OnFocused(Transform playerTransform)
     {
         isFocus1 = true;
