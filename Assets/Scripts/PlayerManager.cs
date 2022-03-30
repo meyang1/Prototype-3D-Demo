@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject player;
+    public GameObject player2;
 
 
     public void KillPlayer()

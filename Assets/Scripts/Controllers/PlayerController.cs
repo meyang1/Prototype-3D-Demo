@@ -31,26 +31,9 @@ public class PlayerController : MonoBehaviour
         {
             return; // accessing to check whether currently hovering over UI, then exit
         }
-        if (Input.GetMouseButton(0) && motor!= null && Input.GetKey(KeyCode.LeftControl))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit; //store what is being clicked on/hit
-
-            if (Physics.Raycast(ray, out hit, 200, movementMask))
-            { //range to allow clicks and mask
-                Debug.Log("We hit " + hit.collider.name + " " + hit.point);
-
-                //Move player to what we hit
-                motor.MoveToPoint(hit.point);
-
-                //Stop focusing any other objects
-                RemoveFocus();
-            }
-            //motor.MoveToPoint(followObject.transform.position);
-        }
          
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -64,11 +47,6 @@ public class PlayerController : MonoBehaviour
                     SetFocus(interactable);
                 }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetFocus(defaultFocus);
-
         }
 
 

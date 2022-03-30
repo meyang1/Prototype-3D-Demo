@@ -7,10 +7,12 @@ public class Interactable : MonoBehaviour
     public float radius = 3f; 
     public Transform interactionTransform;
 
-    bool isFocus = false;
-    Transform player;
+    bool isFocus1 = false;
+    bool isFocus2 = false;
+    public Transform player;
+    public Transform player2;
 
-    bool hasInteracted = false; //check so only debug outputs once
+    public bool hasInteracted = false; //check so only debug outputs once
 
     public virtual void Interact() // a virtual method --> able to be derived for inherited children so not uniform for every class
     {
@@ -20,10 +22,21 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
-        if (isFocus && !hasInteracted)
+        if (isFocus1 && !hasInteracted)
         {
-            float distance = Vector3.Distance(player.position, interactionTransform.position); //checks distance b/w 2 points
-            if(distance<= radius)
+            float distance1 = Vector3.Distance(player.position, interactionTransform.position); //checks distance b/w 2 points
+            if (distance1<= radius)
+            {
+                Interact();
+                hasInteracted = true;
+            }
+        }
+
+        if(isFocus2 && !hasInteracted)
+        {
+
+            float distance2 = Vector3.Distance(player2.position, interactionTransform.position);
+            if (distance2 <= radius)
             {
                 Interact();
                 hasInteracted = true;
@@ -33,18 +46,32 @@ public class Interactable : MonoBehaviour
 
     public void OnFocused(Transform playerTransform)
     {
-        isFocus = true;
+        isFocus1 = true;
         player = playerTransform;
         hasInteracted = false;
     }
 
     public void OnDefocused()
     {
-        isFocus = false;
+        isFocus1 = false;
         player = null;
         hasInteracted = false;
     }
 
+
+    public void OnFocusedP2(Transform playerTransform2)
+    {
+        isFocus2 = true;
+        player2 = playerTransform2;
+        hasInteracted = false;
+    }
+
+    public void OnDefocusedP2()
+    {
+        isFocus2 = false;
+        player2 = null;
+        hasInteracted = false;
+    }
     void OnDrawGizmosSelected()
     {
         if (interactionTransform == null)
