@@ -5,36 +5,32 @@ using UnityEngine.UI;
 
 public class ItemScript : MonoBehaviour
 {
-    public bool inScene = false;
     private bool passed = false;
-    public string type;
+    public Item item;
+
     public Text m_MyText;
-    Animator animator;
-    public static int numberHeld=0;
-    // Start is called before the first frame update
+    //public static int numberHeld;
+    Animator animator; 
+
     void Start()
     {
         animator = GetComponent<Animator>();
-        inScene = true;
-        type = "egg";
         Debug.Log(gameObject.name + " has been created");
-        m_MyText.text = "Number of Eggs Collected: " + numberHeld + " egg(s)";
+        m_MyText.text = "Number of Eggs Collected: " + ItemPickup.numberHeld + " egg(s)";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Player") && passed == false){
             passed=true;
-            Debug.Log(gameObject.name + " has been picked up"); 
             animator.SetInteger("AnimState", 1);
-            numberHeld++;
-            m_MyText.text = "Number of Eggs Collected: " + numberHeld + " egg(s)";
-            inScene = false;
+
+            ItemPickup.numberHeld++;
+            m_MyText.text = "Number of Eggs Collected: " + ItemPickup.numberHeld + " egg(s)";
+
+            Inventory.instance.Add(item);
+
             StartCoroutine(WaitForSeconds(1f));
         }
     } 
@@ -42,7 +38,6 @@ public class ItemScript : MonoBehaviour
     IEnumerator WaitForSeconds(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        Debug.Log(numberHeld + " egg(s) have been picked up");
         Destroy(gameObject);
     }
 }
