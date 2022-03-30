@@ -81,12 +81,12 @@ public class luigiScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 4f;
+            speed = 3f;//4f;
             animator.speed = 1.5f;
         }
         else
         {
-            speed = 2.5f;
+            speed = 2f;//.5f;
             animator.speed = 1f;
         }
 
