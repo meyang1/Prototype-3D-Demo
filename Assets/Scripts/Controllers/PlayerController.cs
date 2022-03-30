@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMotor))]
+//[RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     void Start()
     {
-        cam = Camera.main;
+        cam = Camera.main; 
         motor = GetComponent<PlayerMotor>();
         animator = GetComponent<Animator>();
     }
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             return; // accessing to check whether currently hovering over UI, then exit
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && motor!= null && Input.GetKey(KeyCode.LeftShift))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit; //store what is being clicked on/hit
@@ -48,8 +48,9 @@ public class PlayerController : MonoBehaviour
             }
             //motor.MoveToPoint(followObject.transform.position);
         }
+         
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -79,10 +80,13 @@ public class PlayerController : MonoBehaviour
     void SetFocus(Interactable newFocus) {
         if(newFocus != focus)
         {
-            if(focus!=null)
-                focus.OnDefocused();
+            //if(focus!=null)
+                //focus.OnDefocused();
             focus = newFocus;
-            motor.FollowTarget(focus);
+            if (motor != null)
+            {
+                motor.FollowTarget(focus);
+            }
         } 
 
         newFocus.OnFocused(transform);
@@ -92,7 +96,9 @@ public class PlayerController : MonoBehaviour
         if(focus!=null)
             focus.OnDefocused();
         focus = null;
-        motor.StopFollowingTarget();
+
+        if (motor != null)
+            motor.StopFollowingTarget();
     }
 
 
