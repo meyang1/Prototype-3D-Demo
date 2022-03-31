@@ -12,6 +12,7 @@ public class Item : ScriptableObject
     public virtual void Use() //not implementing functionality b/c different uses for different items; allows you to derive for each one
     {
         //Use the item
+
         //Something might happen
 
         Debug.Log("Using " + name);

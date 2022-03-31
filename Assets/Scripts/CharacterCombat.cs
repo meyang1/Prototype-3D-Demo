@@ -7,7 +7,7 @@ using UnityEngine;
 public class CharacterCombat : MonoBehaviour
 {
     public float attackSpeed = 1f; // can make a character stat later!
-    public float attackDelay = .6f;
+    public float attackDelay = 0f;//.6f;
     private float attackCooldown = 0f;
 
     //callback method for animation

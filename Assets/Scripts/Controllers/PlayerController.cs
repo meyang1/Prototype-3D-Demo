@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public LayerMask movementMask;
     PlayerMotor motor;
-    public GameObject followObject;
-    public float health = 100; 
+    public GameObject followObject; 
     Camera cam;
 
     public Interactable focus;

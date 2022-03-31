@@ -9,6 +9,8 @@ public class CharacterStats : MonoBehaviour
     public Stat damage;
     public Stat armor;
 
+    public event System.Action<int, int> OnHealthChanged; //max health and current health
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -18,7 +20,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            TakeDamage(10);
+            TakeDamage(2);
         }
     }
 
@@ -30,10 +32,23 @@ public class CharacterStats : MonoBehaviour
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
+        if(OnHealthChanged != null)
+        {
+            OnHealthChanged(maxHealth, currentHealth);
+            Debug.Log("Current health " + currentHealth);
+        }
+
         if(currentHealth <= 0)
         {
             Die(); //for players, gameover/respawn; for enemies, drop loot and disappear
         }
+    }
+
+    public void HealDamage(int heal)
+    {
+        heal += currentHealth;
+        heal = Mathf.Clamp(heal, 0, maxHealth);
+        currentHealth = heal;
     }
 
     public virtual void Die()
