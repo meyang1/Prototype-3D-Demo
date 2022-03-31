@@ -20,7 +20,12 @@ public class LevelManager : MonoBehaviour
         }
     }
     
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadSceneAsync(sceneIndex);
 
+
+    }
     public void LoadNextScene(){
         
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
