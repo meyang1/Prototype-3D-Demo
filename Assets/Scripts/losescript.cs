@@ -22,5 +22,10 @@ public class losescript : MonoBehaviour
             lvlmanager.LoadLevel(SceneManager.GetActiveScene().buildIndex-1);
         }
     } 
+    public void NextScene()
+    {
+        lvlmanager.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
 
 }
