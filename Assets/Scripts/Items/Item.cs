@@ -13,6 +13,7 @@ public class Item : ScriptableObject
     {
         //Use the item
 
+        //GetComponent<CharacterStats>().HealDamage(2);
         //Something might happen
 
         Debug.Log("Using " + name);

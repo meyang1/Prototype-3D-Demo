@@ -145,10 +145,16 @@ public class luigiScript : MonoBehaviour
             keyDown = true;
             speed = 2.5f;
         }
-        if (Input.GetKey(KeyCode.F))
+        if (!Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
+
+            
+        }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
+        {
+            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
         }
         else
         {
