@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class ItemPickup : Interactable
 {
     public Item item;
+    public Light myLight;
     public Text m_MyText;
     public static int numberHeld = 0;
     public override void Interact()
@@ -24,6 +25,10 @@ public class ItemPickup : Interactable
         {
             numberHeld++;
             m_MyText.text = "Number of Items Collected: " + numberHeld + " item(s)";
+            if(myLight != null)
+            {
+                myLight.intensity += .05f;
+            }
             Destroy(gameObject);
         }
     }

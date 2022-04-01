@@ -5,6 +5,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
+    public Light myLight;
 
     public Stat damage;
     public Stat armor;
@@ -56,6 +57,10 @@ public class CharacterStats : MonoBehaviour
     public virtual void Die()
     {
         //Die in some way 
+        if (myLight != null)
+        {
+            myLight.intensity += .15f;
+        }
         //method meant to be overwritten
         Debug.Log(transform.name + " died.");
     }
