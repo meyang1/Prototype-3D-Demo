@@ -54,7 +54,7 @@ public class SecondaryPlayerController : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 hitName = hit.collider.name;
                 //if we did set it as focus
-                if (interactable != null && hit.collider.tag != "Enemy")
+                if (interactable != null && hit.collider.tag != "Primary")
                 {
                     SetFocus2(interactable);
 

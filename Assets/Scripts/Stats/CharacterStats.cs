@@ -45,10 +45,12 @@ public class CharacterStats : MonoBehaviour
     }
 
     public void HealDamage(int heal)
-    {
+    { 
         heal += currentHealth;
         heal = Mathf.Clamp(heal, 0, maxHealth);
         currentHealth = heal;
+
+        OnHealthChanged(maxHealth, currentHealth);
     }
 
     public virtual void Die()
