@@ -59,7 +59,7 @@ public class CharacterStats : MonoBehaviour
         //Die in some way 
         if (myLight != null)
         {
-            myLight.intensity += .15f;
+            //myLight.intensity += .15f;
         }
         //method meant to be overwritten
         Debug.Log(transform.name + " died.");
