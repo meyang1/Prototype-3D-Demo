@@ -23,7 +23,7 @@ public class MoveToScene : MonoBehaviour
     {
         // LoadSceneButton();
         if(character.gameObject.name == "PlayerCharacter"){
-        lvlmanager.LoadLevel(str);
+            lvlmanager.LoadScene(str);
         }
     }
     /*IEnumerator LoadInScene()
