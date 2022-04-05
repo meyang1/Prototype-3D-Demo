@@ -29,6 +29,7 @@ public class ItemPickup : Interactable
             {
                 myLight.intensity += .05f;
             }
+            //PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(10);
             Destroy(gameObject);
         }
     }

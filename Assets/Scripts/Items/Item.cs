@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     new public string name = "New Item"; //overwrite default property of name
     public Sprite icon = null;
     public bool isDefaultItem = false;
+    public bool healItem = false;
 
     public virtual void Use() //not implementing functionality b/c different uses for different items; allows you to derive for each one
     {
@@ -17,6 +18,11 @@ public class Item : ScriptableObject
         //Something might happen
 
         Debug.Log("Using " + name);
+        if (healItem)
+        {
+            PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(10);
+            RemoveFromInventory();
+        }
     }
 
     public void RemoveFromInventory()
