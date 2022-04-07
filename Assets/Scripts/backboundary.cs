@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine; 
 
 public class backboundary : MonoBehaviour
 {
     public LevelManager lvlmanager;
+    public int sceneIndexBoundary; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class backboundary : MonoBehaviour
     {
         if (collision.gameObject.name == "PlayerCharacter") { 
     
-            lvlmanager.LoadLevel(0);
+            lvlmanager.LoadScene(sceneIndexBoundary);
         }
     }
 }
