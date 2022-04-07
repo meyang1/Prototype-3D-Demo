@@ -6,12 +6,20 @@ public class HealCharacter : Interactable
     public override void Interact()
     {
         base.Interact();
-        Heal();
+        if(PlayerManager.instance.player2.transform.GetComponent<SecondaryPlayerController>().focus != PlayerManager.instance.player2.transform.GetComponent<SecondaryPlayerController>().defaultFocus)
+        {
+            Heal(10);
+        }
+        else
+        {
+            Heal(30);
+
+        }
     }
 
-    void Heal()
+    void Heal(int healthAmount)
     {
 
-        PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(30);
+        PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(healthAmount);
     }
 }
