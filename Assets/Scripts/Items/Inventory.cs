@@ -10,12 +10,15 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        if (instance == null)
         {
-            Debug.LogWarning("More than 1 instance of Inventory found....");
-            return;
+            instance = this;
         }
-        instance = this; // when start, setting equal to this particular component (can access by Inventory.instance)
+        else
+        {
+             Destroy(this.gameObject);
+        } // when start, setting equal to this particular component (can access by Inventory.instance)
+        DontDestroyOnLoad(this.gameObject);
     }
 
     #endregion

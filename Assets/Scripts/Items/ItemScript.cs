@@ -19,8 +19,7 @@ public class ItemScript : MonoBehaviour
         m_MyText.text = "Number of Eggs Collected: " + ItemPickup.numberHeld + " egg(s)";
     }
 
-
-
+     
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Player") && passed == false){
             passed=true;
@@ -29,7 +28,7 @@ public class ItemScript : MonoBehaviour
             ItemPickup.numberHeld++;
             m_MyText.text = "Number of Eggs Collected: " + ItemPickup.numberHeld + " egg(s)";
 
-            Inventory.instance.Add(item);
+            //Inventory.instance.Add(item);
 
             StartCoroutine(WaitForSeconds(1f));
         }
