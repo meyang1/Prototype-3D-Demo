@@ -13,11 +13,12 @@ using UnityEngine;
 public class luigiScript : MonoBehaviour
 {
     CharacterController characterController;
+    StaticVariablesCharacter staticVars;
     Animator animator;
     public GameObject menu;
     public GameObject Sword;
     public GameObject ActualSword;
-
+        
     public float SwordDelay = 1.0f;
 
     public float speed = 6.0f;
@@ -35,6 +36,8 @@ public class luigiScript : MonoBehaviour
 
     void Start()
     {
+        staticVars = StaticVariablesCharacter.Eyevon;
+        speed = staticVars.speed;
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
     }
