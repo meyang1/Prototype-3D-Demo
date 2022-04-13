@@ -49,7 +49,7 @@ public class luigiScript : MonoBehaviour
             // We are grounded, so recalculate
             // move direction directly from axes
 
-            speed = staticVars.speed;
+            //speed = staticVars.speed;
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
@@ -83,7 +83,7 @@ public class luigiScript : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
-        speed = staticVars.speed;
+        //speed = staticVars.speed;
 
 
         if (Input.GetKey(KeyCode.LeftShift))
