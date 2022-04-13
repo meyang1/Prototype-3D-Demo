@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,4 +29,4 @@ public float lookatspeed = 5f;
 		transform.Rotate(0f, horizontal, 0f, Space.World);
 		//transform.Rotate(-vertical, 0f, 0f, Space.Self);
         }
-}
+}*/

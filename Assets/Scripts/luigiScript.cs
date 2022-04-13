@@ -14,9 +14,11 @@ public class luigiScript : MonoBehaviour
 {
     CharacterController characterController;
     StaticVariablesCharacter staticVars;
+    private float fixedDeltaTime;
     Animator animator;
     public GameObject menu;
     public GameObject Sword;
+    public GameObject TreesTest;
     public GameObject ActualSword;
         
     public float SwordDelay = 1.0f;
@@ -40,6 +42,7 @@ public class luigiScript : MonoBehaviour
         speed = staticVars.speed;
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
     void Update()
@@ -97,16 +100,23 @@ public class luigiScript : MonoBehaviour
             animator.speed = 1f;
         }
 
+        if (Input.GetKey(KeyCode.G))
+        {
+            TreesTest.SetActive(false);
+        }
+        if (Input.GetKey(KeyCode.H))
+        {
+            TreesTest.SetActive(true);
+        }
 
 
-
-            bool keyDown = false;
+        bool keyDown = false;
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("AnimState", 0); //Left
             keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
+        } 
         if (Input.GetKey(KeyCode.S))
         {
             animator.SetInteger("AnimState", 0);
@@ -155,20 +165,23 @@ public class luigiScript : MonoBehaviour
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
+            StartCoroutine(SwordSlow(1.2f));
 
-            
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
+            StartCoroutine(SwordSlow(1.7f));
         }
         else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
+            StartCoroutine(SwordSlow(1f));
         }
         else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
+            StartCoroutine(SwordSlow(1.2f));
         }
         else
         {
@@ -203,6 +216,7 @@ public class luigiScript : MonoBehaviour
     IEnumerator SetSword(float delay)
     {
         Sword.SetActive(true);
+         
         yield return new WaitForSeconds(delay);
         Sword.SetActive(false);
     }
@@ -231,4 +245,12 @@ public class luigiScript : MonoBehaviour
         }
     }
     */
+    IEnumerator SwordSlow(float timeDelay)
+    {
+        Time.timeScale = .7f;
+        yield return new WaitForSeconds(timeDelay);
+
+        Time.timeScale = 1f;
+    }
+    
 }

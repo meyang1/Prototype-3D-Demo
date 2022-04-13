@@ -43,6 +43,7 @@ public class CharacterStats : MonoBehaviour
         {
             Die(); //for players, gameover/respawn; for enemies, drop loot and disappear
         }
+        
     }
 
     public void HealDamage(int heal)
