@@ -59,7 +59,7 @@ public class PlayerStats : CharacterStats
     public virtual void HealDamage(int heal)
     { 
         heal += staticVars.currentHealth;
-        heal = Mathf.Clamp(heal, 0, maxHealth);
+        heal = Mathf.Clamp(heal, 0, staticVars.maxHealth);
         currentHealth = heal;
         staticVars.currentHealth = heal;
 
