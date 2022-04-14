@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     //Singleton Pattern - Basic - Important for game managers
     #region Singleton
     public static Inventory instance; //static var with same type as class
+    public Text notificationText;
+    public GameObject notification;
 
     void Awake()
     {
@@ -38,11 +41,19 @@ public class Inventory : MonoBehaviour
             if (items.Count >= space)
             {
                 Debug.Log("Not enough room.");
+                notificationText.text = "Bag is full!";
+                notification.GetComponent<Animator>().SetInteger("AnimState", 1);
+                notification.GetComponent<Animator>().SetInteger("AnimState", 0);
+
+
                 return false;
             }
             items.Add(item);
+            notificationText.text = item.name + "+1";
+            notification.GetComponent<Animator>().SetInteger("AnimState", 1);
+            notification.GetComponent<Animator>().SetInteger("AnimState", 0);
 
-            if(onItemChangedCallback != null) 
+            if (onItemChangedCallback != null) 
                 onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI
 
         }

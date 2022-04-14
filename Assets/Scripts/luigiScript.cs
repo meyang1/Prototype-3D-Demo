@@ -33,6 +33,11 @@ public class luigiScript : MonoBehaviour
     private float canJump = 0f;
     public float timeTillJump = 0.25f;
     public float timeTillDash = 1f;
+    public AudioClip _forwardThrust;
+    public AudioClip _sideThrust;
+    public AudioClip _doubleThrust;
+    public AudioSource _audioSource;
+
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -43,6 +48,8 @@ public class luigiScript : MonoBehaviour
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
+
+        _audioSource = GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -165,23 +172,27 @@ public class luigiScript : MonoBehaviour
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
-            StartCoroutine(SwordSlow(1.2f));
+            //_audioSource.clip = _sideThrust;
+            //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
-            StartCoroutine(SwordSlow(1.7f));
+            //_audioSource.clip = _doubleThrust;
+            //_audioSource.PlayOneShot(_doubleThrust, 0.7F);
         }
         else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
-            StartCoroutine(SwordSlow(1f));
+            //_audioSource.clip = _forwardThrust;
+            //_audioSource.PlayOneShot(_forwardThrust, 0.7F);
         }
         else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
-            StartCoroutine(SwordSlow(1.2f));
+            //_audioSource.clip = _sideThrust;
+            //_audioSource.PlayOneShot(_sideThrust, 0.7F);
         }
         else
         {
@@ -196,7 +207,12 @@ public class luigiScript : MonoBehaviour
         
         //Idle
         
+        if(ActualSword.transform.GetChild(0).GetComponent<SlowTimeSword>().hitSomething == true)
+        {
 
+            StartCoroutine(SwordSlow(.05f)); 
+        }
+        //Sword Slow
         
         bool menuOpen = false;
         //Menu
@@ -246,11 +262,14 @@ public class luigiScript : MonoBehaviour
     }
     */
     IEnumerator SwordSlow(float timeDelay)
-    {
-        Time.timeScale = .7f;
+    { 
+        Time.timeScale = .1f;
         yield return new WaitForSeconds(timeDelay);
+        //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         Time.timeScale = 1f;
+        ActualSword.transform.GetChild(0).GetComponent<SlowTimeSword>().hitSomething = false;
+        
     }
     
 }
