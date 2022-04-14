@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    public int currentHealth; //{ get; private set; }
     public Light myLight;
 
     public Stat damage;
@@ -14,18 +14,18 @@ public class CharacterStats : MonoBehaviour
 
     void Awake()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            TakeDamage(2);
+            TakeDamage(20);
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue); // set limits to the damage variable;
@@ -46,7 +46,7 @@ public class CharacterStats : MonoBehaviour
         
     }
 
-    public void HealDamage(int heal)
+    public virtual void HealDamage(int heal)
     { 
         heal += currentHealth;
         heal = Mathf.Clamp(heal, 0, maxHealth);

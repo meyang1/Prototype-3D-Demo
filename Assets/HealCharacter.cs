@@ -20,6 +20,6 @@ public class HealCharacter : Interactable
     void Heal(int healthAmount)
     {
 
-        PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(healthAmount);
+        PlayerManager.instance.player.GetComponent<PlayerStats>().HealDamage(healthAmount);
     }
 }

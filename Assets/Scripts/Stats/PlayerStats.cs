@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
+    StaticVariablesCharacter staticVars;
+    public event System.Action<int, int> OnHealthChanged;
     // Start is called before the first frame update
     void Start()
     {
-        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+        staticVars = StaticVariablesCharacter.Eyevon;
+        currentHealth = staticVars.currentHealth;
+        maxHealth = staticVars.maxHealth;
+        currentHealth = staticVars.currentHealth;
+        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged; 
+    }
+
+    void Awake()
+    {
     }
 
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
@@ -23,7 +33,38 @@ public class PlayerStats : CharacterStats
             damage.RemoveModifier(oldItem.damageModifier);
         }
     }
+    public override void TakeDamage(int damage)
+    {
+        damage -= armor.GetValue();
+        damage = Mathf.Clamp(damage, 0, int.MaxValue); // set limits to the damage variable;
 
+        currentHealth -= damage;
+        staticVars.currentHealth -= damage;
+        Debug.Log(transform.name + " takes " + damage + " damage.");
+
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged(maxHealth, currentHealth);
+            Debug.Log("Player health " + currentHealth);
+        }
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = staticVars.maxHealth;
+            staticVars.currentHealth = staticVars.maxHealth;
+            Die(); //for players, gameover/respawn; for enemies, drop loot and disappear
+        }
+
+    }
+    public virtual void HealDamage(int heal)
+    { 
+        heal += staticVars.currentHealth;
+        heal = Mathf.Clamp(heal, 0, maxHealth);
+        currentHealth = heal;
+        staticVars.currentHealth = heal;
+
+        OnHealthChanged(maxHealth, currentHealth);
+    }
     public override void Die()
     {
         base.Die();

@@ -20,15 +20,16 @@ public class StaticVariablesCharacter : MonoBehaviour
     }
 
 
-    public float health=100;
+    public int maxHealth=100;
+    public int currentHealth = 100;
     public float attack=10;
     public float speed=3;
     public float jumpSpeed=8;
 
 
-    public void increaseHealth(float healthIncrease)
+    public void increaseHealth(int healthIncrease)
     {
-        health += healthIncrease;
+        maxHealth += healthIncrease;
     }
 
     public void increaseAttack(float attackIncrease)
