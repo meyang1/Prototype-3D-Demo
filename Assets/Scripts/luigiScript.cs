@@ -31,7 +31,7 @@ public class luigiScript : MonoBehaviour
     public float gravity = 20.0f;
 
     private float canJump = 0f;
-    public float timeTillJump = 0.25f;
+    public float timeTillJump = 0f ;
     public float timeTillDash = 1f;
     public AudioClip _forwardThrust;
     public AudioClip _sideThrust;
