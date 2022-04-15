@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject Fade;
     public void LoadLevel(int sceneIndex)
-    {
+    { 
         StartCoroutine(LoadAsynchronously(sceneIndex));
     } 
 
@@ -22,12 +23,12 @@ public class LevelManager : MonoBehaviour
     
     public void LoadScene(int sceneIndex)
     {
-        SceneManager.LoadSceneAsync(sceneIndex);
+        Fade.GetComponent<Animator>().SetInteger("AnimState", 1);
+        StartCoroutine(WaitSec(sceneIndex)); 
 
 
     }
-    public void LoadNextScene(){
-        
+    public void LoadNextScene(){ 
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
         
     }
@@ -49,5 +50,11 @@ public class LevelManager : MonoBehaviour
 
         Application.Quit();
     }
-    
+    IEnumerator WaitSec( int sceneIndex)
+    {
+        this.GetComponent<AudioSource>().Pause();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadSceneAsync(sceneIndex);
+    }
+
 }

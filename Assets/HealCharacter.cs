@@ -17,7 +17,7 @@ public class HealCharacter : Interactable
         //}
         //else
         //{
-            Heal(30);
+            Heal(10);
 
        // }
     }

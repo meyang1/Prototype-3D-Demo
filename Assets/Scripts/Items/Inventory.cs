@@ -64,8 +64,7 @@ public class Inventory : MonoBehaviour
     }
 
     IEnumerator NotificationDelay(float timeDelay)
-    {
-        yield return new WaitForSeconds(.5f);
+    { 
         notification.GetComponent<Animator>().SetInteger("AnimState", 1);
         yield return new WaitForSeconds(timeDelay);
         notification.GetComponent<Animator>().SetInteger("AnimState", 0);
