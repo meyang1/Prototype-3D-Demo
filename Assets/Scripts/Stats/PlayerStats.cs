@@ -63,7 +63,7 @@ public class PlayerStats : CharacterStats
         currentHealth = heal;
         staticVars.currentHealth = heal;
 
-        OnHealthChanged(maxHealth, currentHealth);
+        //OnHealthChanged(maxHealth, currentHealth);
     }
     public override void Die()
     {

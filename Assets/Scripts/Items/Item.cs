@@ -20,13 +20,13 @@ public class Item : ScriptableObject
         Debug.Log("Using " + name);
         if (healItem)
         {
-            PlayerManager.instance.player.GetComponent<CharacterStats>().HealDamage(10);
             RemoveFromInventory();
         }
     }
 
     public void RemoveFromInventory()
     {
+        PlayerManager.instance.player.GetComponent<PlayerStats>().HealDamage(10);
         Inventory.instance.Remove(this);
     }
 }

@@ -41,17 +41,13 @@ public class Inventory : MonoBehaviour
             if (items.Count >= space)
             {
                 Debug.Log("Not enough room.");
-                notificationText.text = "Bag is full!";
-                notification.GetComponent<Animator>().SetInteger("AnimState", 1);
-                notification.GetComponent<Animator>().SetInteger("AnimState", 0);
-
-
+                notificationText.text = "Bag is full!"; 
+                StartCoroutine(NotificationDelay(.2f));
                 return false;
             }
             items.Add(item);
             notificationText.text = item.name + "+1";
-            notification.GetComponent<Animator>().SetInteger("AnimState", 1);
-            notification.GetComponent<Animator>().SetInteger("AnimState", 0);
+            StartCoroutine(NotificationDelay(.1f));
 
             if (onItemChangedCallback != null) 
                 onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI
@@ -65,5 +61,13 @@ public class Inventory : MonoBehaviour
         items.Remove(item);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI
+    }
+
+    IEnumerator NotificationDelay(float timeDelay)
+    {
+        yield return new WaitForSeconds(.5f);
+        notification.GetComponent<Animator>().SetInteger("AnimState", 1);
+        yield return new WaitForSeconds(timeDelay);
+        notification.GetComponent<Animator>().SetInteger("AnimState", 0);
     }
 }
