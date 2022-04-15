@@ -29,6 +29,7 @@ public class luigiScript : MonoBehaviour
     public float dashSpeedY = 6.0f;
 
     public float gravity = 20.0f;
+    public bool pressedAttack = false;
 
     private float canJump = 0f;
     public float timeTillJump = 0f ;
@@ -170,12 +171,29 @@ public class luigiScript : MonoBehaviour
             keyDown = true;
             speed = 2.5f;
         }
-        if (!characterController.isGrounded&&Input.GetKeyDown(KeyCode.F))
+
+        if (!characterController.isGrounded && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
         {
-            StartCoroutine(SwordSlow(.1f));
-            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 4); 
+            //StartCoroutine(SwordSlowJump(.1f));
+            if (pressedAttack == false)
+            {
+                Time.timeScale = .4f;
+                ActualSword.GetComponent<Animator>().speed = 5;
+                pressedAttack = true;
+                Debug.Log("Set Pressed Attack to true");
+            }
         }
-        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
+        else if(pressedAttack == true && characterController.isGrounded)
+        {
+            Time.timeScale = 1f;
+            ActualSword.GetComponent<Animator>().speed = 1;
+            pressedAttack = false;
+            Debug.Log("Set Pressed Attack to false");
+
+        }
+        
+
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
@@ -183,19 +201,19 @@ public class luigiScript : MonoBehaviour
             //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         }
-        else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
             //_audioSource.clip = _doubleThrust;
             //_audioSource.PlayOneShot(_doubleThrust, 0.7F);
         }
-        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
+        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
             //_audioSource.clip = _forwardThrust;
             //_audioSource.PlayOneShot(_forwardThrust, 0.7F);
         }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
             //_audioSource.clip = _sideThrust;
@@ -278,5 +296,24 @@ public class luigiScript : MonoBehaviour
         ActualSword.transform.GetChild(0).GetComponent<SlowTimeSword>().hitSomething = false;
         
     }
-    
+    IEnumerator SwordSlowJump(float timeDelay)
+    {
+
+        ActualSword.GetComponent<Animator>().SetInteger("AnimState", 0);
+        while (!characterController.isGrounded)
+        { 
+            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 4);
+            ActualSword.GetComponent<Animator>().speed = 10;
+
+            Time.timeScale = .1f;
+            yield return null;
+        }
+        if(characterController.isGrounded)
+        {
+            Time.timeScale = 1f;
+            ActualSword.GetComponent<Animator>().speed = 1;
+        }
+
+    }
+
 }
