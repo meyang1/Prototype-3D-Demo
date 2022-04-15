@@ -118,6 +118,8 @@ public class luigiScript : MonoBehaviour
 
 
         bool keyDown = false;
+
+        
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("AnimState", 0); //Left
@@ -168,7 +170,12 @@ public class luigiScript : MonoBehaviour
             keyDown = true;
             speed = 2.5f;
         }
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
+        if (!characterController.isGrounded&&Input.GetKeyDown(KeyCode.F))
+        {
+            StartCoroutine(SwordSlow(.1f));
+            ActualSword.GetComponent<Animator>().SetInteger("AnimState", 4); 
+        }
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
