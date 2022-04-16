@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     //Singleton Pattern - Basic - Important for game managers
+    public StaticVariablesCharacter staticVars;
     #region Singleton
     public static Inventory instance; //static var with same type as class
     public Text notificationText;
@@ -48,6 +49,7 @@ public class Inventory : MonoBehaviour
             items.Add(item);
             notificationText.text = item.name + "+1";
             StartCoroutine(NotificationDelay(.1f));
+
 
             if (onItemChangedCallback != null) 
                 onItemChangedCallback.Invoke(); //trigger the event to update Inventory UI

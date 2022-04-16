@@ -8,6 +8,7 @@ public class ItemPickup : Interactable
     public Light myLight;
     public Text m_MyText;
     public static int numberHeld = 0;
+    public StaticVariablesCharacter staticVars;
     public override void Interact()
     {
         base.Interact();
@@ -15,7 +16,8 @@ public class ItemPickup : Interactable
     }
 
     void PickUp()
-    { 
+    {
+        staticVars = StaticVariablesCharacter.Eyevon;
         Debug.Log("Picking up " + item.name);
 
         //add to inventory //Inventory.instance.Add(item); 
@@ -25,6 +27,18 @@ public class ItemPickup : Interactable
 
         if (wasPickedUp)
         {
+            if (staticVars.quest.isActive)
+            {
+                staticVars.quest.goal.ItemCollected();
+                Debug.Log("Received one item -- Goal");
+                if (staticVars.quest.goal.IsReached())
+                {
+                    staticVars.increaseExperience(staticVars.quest.experienceReward);
+                    staticVars.increaseCurrency(staticVars.quest.currencyReward);
+                    staticVars.questCompleteWindow.SetActive(true);
+                    staticVars.quest.Complete();
+                }
+            }
             Destroy(gameObject);
         }
         /*if (wasPickedUp)

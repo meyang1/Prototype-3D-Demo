@@ -9,11 +9,13 @@ public class CharacterStats : MonoBehaviour
 
     public Stat damage;
     public Stat armor;
+    public StaticVariablesCharacter staticVars;
 
     public event System.Action<int, int> OnHealthChanged; //max health and current health
 
     void Awake()
     {
+        staticVars = StaticVariablesCharacter.Eyevon;
         //currentHealth = maxHealth;
     }
 

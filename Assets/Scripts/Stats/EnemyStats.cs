@@ -7,9 +7,22 @@ public class EnemyStats : CharacterStats
     public override void Die()
     {
         base.Die();
+        
 
+        if (staticVars.quest.isActive)
+        {
+            staticVars.quest.goal.EnemyKilled();
+            Debug.Log("Killed one enemy -- Goal");
+            if (staticVars.quest.goal.IsReached())
+            {
+                staticVars.increaseExperience(staticVars.quest.experienceReward);
+                staticVars.increaseCurrency(staticVars.quest.currencyReward); 
+                staticVars.questCompleteWindow.SetActive(true);
+                staticVars.quest.Complete();
+            }
+        }
         //add ragdoll effect/ death animation
-         //add loot
+        //add loot
         Destroy(gameObject);
     }
 }
