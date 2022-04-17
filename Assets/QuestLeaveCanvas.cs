@@ -20,6 +20,6 @@ public class QuestLeaveCanvas : MonoBehaviour
         else
         {
             canvasQuest.SetActive(!canvasQuest.activeSelf);
-        }
+        } 
     }
 }

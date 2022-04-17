@@ -6,7 +6,7 @@ public class QuestCompleteCanvas : MonoBehaviour
 {
     public QuestLeaveCanvas canvasLeaveQuest;
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         StartCoroutine(slowTime(4.1f));
     }
