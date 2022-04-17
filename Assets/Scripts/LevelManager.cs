@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator WaitSec( int sceneIndex)
     {
         this.GetComponent<AudioSource>().Pause();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 
