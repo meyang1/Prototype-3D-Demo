@@ -20,7 +20,6 @@ public class QuestGiver : MonoBehaviour
     public void OpenQuestWindow()
     {
         staticVars.questWindow.SetActive(true);
-        staticVars.questTypeTitleText.text = quest.title;
         staticVars.titleText.text = quest.title;
         staticVars.descriptionText.text = quest.description;
         staticVars.regionText.text = quest.region;

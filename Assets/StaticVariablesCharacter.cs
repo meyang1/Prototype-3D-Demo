@@ -89,7 +89,20 @@ public class StaticVariablesCharacter : MonoBehaviour
     public void AcceptQuest()
     {
         questCompleteWindow.SetActive(false);
-        questTypeProgress.text = "None";
+        questTypeTitleText.text = quest.title;
+
+        if (quest.goal.goalType == GoalType.Kill)
+        {
+            questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Enemies";
+        }
+        else if (quest.goal.goalType == GoalType.Gathering)
+        { 
+            questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Items";
+        }
+        else
+        {
+            questTypeProgress.text = "None"; 
+        }
         questTypeWindow.SetActive(true);
         questWindow.SetActive(false);
         quest.isActive = true;
