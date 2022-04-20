@@ -117,6 +117,7 @@ public class StaticVariablesCharacter : MonoBehaviour
             {
                 questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Items";
             }
+            //else if(quest.goal.goalType == GoalType.Reach)
             else
             {
                 questTypeProgress.text = "None";
