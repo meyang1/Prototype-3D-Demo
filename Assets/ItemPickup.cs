@@ -9,6 +9,7 @@ public class ItemPickup : Interactable
     public Text m_MyText;
     public static int numberHeld = 0;
     public StaticVariablesCharacter staticVars;
+    public int experienceGain=0;
     public override void Interact()
     {
         base.Interact();
@@ -27,6 +28,7 @@ public class ItemPickup : Interactable
 
         if (wasPickedUp)
         {
+            staticVars.increaseExperience(experienceGain);
             if (staticVars.quest.isActive)
             {
                 staticVars.quest.goal.ItemCollected();

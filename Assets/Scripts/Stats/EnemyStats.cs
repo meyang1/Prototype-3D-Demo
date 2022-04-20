@@ -7,7 +7,8 @@ public class EnemyStats : CharacterStats
     public override void Die()
     {
         base.Die();
-        
+        staticVars.increaseExperience(20);
+
 
         if (staticVars.quest.isActive)
         {

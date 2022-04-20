@@ -30,6 +30,7 @@ public class StaticVariablesCharacter : MonoBehaviour
     public int experienceAmount = 0;
     public int characterLevel = 1;
     public int currencyAmount = 0;
+    public int defense = 10;
 
     public GameObject fadeToBlack;
 
@@ -50,6 +51,15 @@ public class StaticVariablesCharacter : MonoBehaviour
      
     public Text questTypeTitleText;
     public Text questTypeProgress;
+
+    public GameObject levelUpCanvas;
+    public GameObject levelLowCanvas;
+
+
+    public Text levelText;
+    public Text attackText;
+    public Text speedText;
+    public Text defenseText;
 
     public void increaseHealth(int healthIncrease)
     {
@@ -74,11 +84,13 @@ public class StaticVariablesCharacter : MonoBehaviour
     public void increaseExperience(int expIncrease)
     {
         experienceAmount += expIncrease;
+        levelUpCanvas.SetActive(false);
         if (experienceAmount >= 100)
         {
             characterLevel++;
             experienceAmount -= 100;
-
+            levelText.text = characterLevel.ToString(); 
+            StartCoroutine(SetCanvasTrue()); 
         }
     }
     public void increaseCurrency(int currencyIncrease)
@@ -89,25 +101,32 @@ public class StaticVariablesCharacter : MonoBehaviour
     public void AcceptQuest()
     {
         questCompleteWindow.SetActive(false);
-        questTypeTitleText.text = quest.title;
-
-        if (quest.goal.goalType == GoalType.Kill)
+        /*if (characterLevel < quest.goal.levelRequirement)
         {
-            questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Enemies";
-        }
-        else if (quest.goal.goalType == GoalType.Gathering)
-        { 
-            questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Items";
+
         }
         else
-        {
-            questTypeProgress.text = "None"; 
-        }
-        questTypeWindow.SetActive(true);
-        questWindow.SetActive(false);
-        quest.isActive = true;
-        //give to player
-        LoadLevel(quest.sceneIndexRegion);
+        {*/
+            questTypeTitleText.text = quest.title;
+
+            if (quest.goal.goalType == GoalType.Kill)
+            {
+                questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Enemies";
+            }
+            else if (quest.goal.goalType == GoalType.Gathering)
+            {
+                questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Items";
+            }
+            else
+            {
+                questTypeProgress.text = "None";
+            }
+            questTypeWindow.SetActive(true);
+            questWindow.SetActive(false);
+            quest.isActive = true;
+            //give to player
+            LoadLevel(quest.sceneIndexRegion);
+       // }
 
     }
     public void LoadLevel(int sceneIndex)
@@ -126,8 +145,21 @@ public class StaticVariablesCharacter : MonoBehaviour
             yield return null; //wait until the next frame 
         }
     }
+    IEnumerator SetCanvasTrue()
+    {
+        levelUpCanvas.SetActive(true);
+        yield return new WaitForSeconds(185);
+        levelUpCanvas.SetActive(false);
+    }
+
+    IEnumerator SetErrorMessageTrue()
+    {
+        levelUpCanvas.SetActive(true);
+        yield return new WaitForSeconds(185);
+        levelUpCanvas.SetActive(false);
+    }
 
     public void CancelQuest()
-    { 
-    }
+    {
+    } 
 }

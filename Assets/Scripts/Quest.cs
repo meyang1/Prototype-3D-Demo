@@ -30,8 +30,8 @@ public class Quest
         Debug.Log(title + " was completed!");
         goal = null;
         staticVars.questTypeWindow.SetActive(false);
-        staticVars.currencyAmount += currencyReward;
-        staticVars.experienceAmount += experienceReward;
+        //staticVars.currencyAmount += currencyReward;
+        //staticVars.increaseExperience(experienceReward);
     }
 
 }
