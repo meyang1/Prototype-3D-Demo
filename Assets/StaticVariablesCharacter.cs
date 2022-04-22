@@ -27,7 +27,8 @@ public class StaticVariablesCharacter : MonoBehaviour
     public float attack=10;
     public float speed=3;
     public float jumpSpeed=8;
-    public int experienceAmount = 0;
+    public int experienceAmount = 0
+    public int experienceAmountNeeded = 100;
     public int characterLevel = 1;
     public int currencyAmount = 0;
     public int defense = 10;
@@ -85,11 +86,14 @@ public class StaticVariablesCharacter : MonoBehaviour
     {
         experienceAmount += expIncrease;
         levelUpCanvas.SetActive(false);
-        if (experienceAmount >= 100)
+        if (experienceAmount >= experienceAmountNeeded)
         {
             characterLevel++;
-            experienceAmount -= 100;
+            //experienceAmount = 0;
+            //experienceAmountNeeded = experienceAmountNeeded * 5 / 4;
             levelText.text = characterLevel.ToString(); 
+            //maxHealth = maxHealth * 5/4; 
+            currentHealth = maxHealth;
             StartCoroutine(SetCanvasTrue()); 
         }
     }

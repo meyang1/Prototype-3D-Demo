@@ -37,6 +37,17 @@ public class QuestGoal
         }
     }
 
+    public void ReachEnd()
+    {
+        staticVars = StaticVariablesCharacter.Eyevon;
+        if (goalType == GoalType.Reach)
+        {
+            currentAmount++;
+            staticVars.questTypeProgress.text = "In Progress";
+
+        }
+    }
+
 
 }
 
@@ -45,6 +56,7 @@ public enum GoalType
 {
     Kill, //defeat enemies
     Gathering, //gather number of items
-    Survive //for certain amount of time
+    Survive,
+    Reach //for certain amount of time
     //Escort, etc.
 }
