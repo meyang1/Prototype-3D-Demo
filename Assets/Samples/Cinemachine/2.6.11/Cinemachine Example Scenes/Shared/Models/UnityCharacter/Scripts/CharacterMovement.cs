@@ -13,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
     public KeyCode sprintKeyboard = KeyCode.Space;
 
     private float turnSpeedMultiplier;
-    private float speed = 0f;
+    public float speed = 0f;
     private float direction = 0f;
     private bool isSprinting = false;
     private Animator anim;

@@ -8,12 +8,15 @@ public class Item : ScriptableObject
     new public string name = "New Item"; //overwrite default property of name
     public Sprite icon = null;
     public bool isDefaultItem = false;
+    public StaticVariablesCharacter staticVars;
     public bool healItem = false;
 
     public virtual void Use() //not implementing functionality b/c different uses for different items; allows you to derive for each one
     {
+        staticVars = StaticVariablesCharacter.Eyevon;
         //Use the item
 
+        staticVars.increaseExperience(5);
         //GetComponent<CharacterStats>().HealDamage(2);
         //Something might happen
 

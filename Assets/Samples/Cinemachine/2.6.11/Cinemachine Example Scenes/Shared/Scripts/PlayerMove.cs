@@ -91,5 +91,5 @@ public class PlayerMove : MonoBehaviour
             EnterAction();
     }
 
-    public void Jump() { m_currentJumpSpeed += 10 * JumpTime * 0.5f; }
+    public void Jump() { m_currentJumpSpeed += 20 * JumpTime * 0.5f; }
 }
