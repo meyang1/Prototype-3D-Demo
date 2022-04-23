@@ -139,7 +139,7 @@ public class StaticVariablesCharacter : MonoBehaviour
     }
     public void LoadLevel(int sceneIndex)
     {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        StartCoroutine(WaitSec(sceneIndex));
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
@@ -152,6 +152,12 @@ public class StaticVariablesCharacter : MonoBehaviour
 
             yield return null; //wait until the next frame 
         }
+    }
+    IEnumerator WaitSec(int sceneIndex)
+    {
+        fadeToBlack.SetActive(true); 
+        yield return new WaitForSeconds(.75f);
+        SceneManager.LoadSceneAsync(sceneIndex);
     }
     IEnumerator SetCanvasTrue()
     {

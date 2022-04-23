@@ -1,4 +1,4 @@
-using System.Collections; 
+    using System.Collections; 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public GameObject Fade;
+    StaticVariablesCharacter staticVars; 
     public void LoadLevel(int sceneIndex)
-    { 
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-    } 
+    {
+        StartCoroutine(WaitSec(sceneIndex));
+    }
+    void Start()
+    {
+        staticVars = StaticVariablesCharacter.Eyevon;
+        staticVars.fadeToBlack.SetActive(false);
+    }
 
     IEnumerator LoadAsynchronously (int sceneIndex){
 
@@ -51,9 +57,11 @@ public class LevelManager : MonoBehaviour
         Application.Quit();
     }
     IEnumerator WaitSec( int sceneIndex)
-    {
+    { 
+        staticVars.fadeToBlack.SetActive(true);
+
         this.GetComponent<AudioSource>().Pause();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(.75f);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 
