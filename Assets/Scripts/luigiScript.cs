@@ -20,7 +20,8 @@ public class luigiScript : MonoBehaviour
     public GameObject Sword;
     public GameObject TreesTest;
     public GameObject ActualSword;
-        
+    public GameObject FirstPersonView;
+
     public float SwordDelay = 1.0f;
 
     public float speed = 6.0f;
@@ -170,6 +171,11 @@ public class luigiScript : MonoBehaviour
         if(Input.GetMouseButton(0)){    
             keyDown = true;
             speed = 2.5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        { 
+            FirstPersonView.SetActive(!FirstPersonView.activeSelf);
         }
 
         if (!characterController.isGrounded && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
