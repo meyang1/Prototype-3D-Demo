@@ -172,10 +172,11 @@ public class luigiScript : MonoBehaviour
             keyDown = true;
             speed = 2.5f;
         }
-
+        FirstPersonView.SetActive(staticVars.firstPerson);
         if (Input.GetKeyDown(KeyCode.F))
-        { 
-            FirstPersonView.SetActive(!FirstPersonView.activeSelf);
+        {
+            staticVars.firstPerson = !staticVars.firstPerson;
+            StartCoroutine(SetFirstPerson());
         }
 
         if (!characterController.isGrounded && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
@@ -266,6 +267,11 @@ public class luigiScript : MonoBehaviour
          
         yield return new WaitForSeconds(delay);
         Sword.SetActive(false);
+    }
+    IEnumerator SetFirstPerson()
+    { 
+        yield return new WaitForSeconds(2f); 
+        staticVars.firstPersonCanvas.SetActive(staticVars.firstPerson);
     }
     /*void OnCollisionEnter(Collision collision)
     {

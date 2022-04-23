@@ -34,6 +34,8 @@ public class StaticVariablesCharacter : MonoBehaviour
     public int defense = 10;
 
     public GameObject fadeToBlack;
+    public bool firstPerson = false;
+    public GameObject firstPersonCanvas;
 
     public GameObject questWindow;
     public GameObject questCompleteWindow;
