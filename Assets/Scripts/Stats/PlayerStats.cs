@@ -38,19 +38,21 @@ public class PlayerStats : CharacterStats
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue); // set limits to the damage variable;
 
-        currentHealth -= damage;
+        maxHealth = staticVars.maxHealth;
+        currentHealth = staticVars.currentHealth;
+        //currentHealth -= damage;
         staticVars.currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
         if (OnHealthChanged != null)
         {
-            OnHealthChanged(maxHealth, currentHealth);
-            Debug.Log("Player health " + currentHealth);
+            OnHealthChanged(staticVars.maxHealth, staticVars.currentHealth);
+            Debug.Log("Player health " + staticVars.currentHealth);
         }
 
-        if (currentHealth <= 0)
+        if (staticVars.currentHealth <= 0)
         {
-            currentHealth = staticVars.maxHealth;
+            //currentHealth = staticVars.maxHealth;
             staticVars.currentHealth = staticVars.maxHealth;
             Die(); //for players, gameover/respawn; for enemies, drop loot and disappear
         }
@@ -60,7 +62,7 @@ public class PlayerStats : CharacterStats
     { 
         heal += staticVars.currentHealth;
         heal = Mathf.Clamp(heal, 0, staticVars.maxHealth);
-        currentHealth = heal;
+        //currentHealth = heal;
         staticVars.currentHealth = heal;
 
         //OnHealthChanged(maxHealth, currentHealth);
