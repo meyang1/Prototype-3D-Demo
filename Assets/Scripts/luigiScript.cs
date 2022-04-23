@@ -139,6 +139,7 @@ public class luigiScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("AnimState", 1); //Right
+            staticVars.firstPersonAnimator.SetInteger("AnimState", 1);
             keyDown = true;
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -155,6 +156,7 @@ public class luigiScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("AnimState", 2);
+            staticVars.firstPersonAnimator.SetInteger("AnimState", 2);
             keyDown = true;
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -235,6 +237,8 @@ public class luigiScript : MonoBehaviour
         
         if(keyDown == false){
             animator.SetInteger("AnimState", 0);
+
+            staticVars.firstPersonAnimator.SetInteger("AnimState", 0);
         }
         
         //Idle

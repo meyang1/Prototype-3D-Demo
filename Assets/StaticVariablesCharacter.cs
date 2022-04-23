@@ -36,6 +36,7 @@ public class StaticVariablesCharacter : MonoBehaviour
     public GameObject fadeToBlack;
     public bool firstPerson = false;
     public GameObject firstPersonCanvas;
+    public Animator firstPersonAnimator;
 
     public GameObject questWindow;
     public GameObject questCompleteWindow;
