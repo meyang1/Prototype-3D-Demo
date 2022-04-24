@@ -88,9 +88,9 @@ public class StaticVariablesCharacter : MonoBehaviour
     public void increaseExperience(int expIncrease)
     {
         experienceAmount += expIncrease;
-        levelUpCanvas.SetActive(false);
         if (experienceAmount >= experienceAmountNeeded)
         {
+            levelUpCanvas.SetActive(false);
             characterLevel++;
             experienceAmount = 0;
             experienceAmountNeeded = experienceAmountNeeded * 5 / 4;
