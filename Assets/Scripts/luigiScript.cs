@@ -33,6 +33,8 @@ public class luigiScript : MonoBehaviour
     public bool pressedAttack = false;
 
     private float canJump = 0f;
+    public bool firstClick = false;
+
     public float timeTillJump = 0f ;
     public float timeTillDash = 1f;
     public AudioClip _forwardThrust;
@@ -59,6 +61,14 @@ public class luigiScript : MonoBehaviour
 
     void Update()
     {
+
+        bool keyDown = false;
+        if (Input.GetMouseButton(0) && firstClick == false)
+        {
+            StartCoroutine(FirstClick());
+            keyDown = true;
+        }
+
         if (characterController.isGrounded)
         {
             // We are grounded, so recalculate
@@ -121,17 +131,20 @@ public class luigiScript : MonoBehaviour
             TreesTest.SetActive(true);
         }
 
-        if (Input.GetMouseButton(0))
+
+
+        /*if (Input.GetMouseButton(0)&& firstClick == true)
         {
+            keyDown = true;
+            speed = 2.5f;
             Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode); 
         }
         else
         {
             Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode); 
         }
+        */
 
-
-            bool keyDown = false;
 
         
         if (Input.GetKey(KeyCode.W))
@@ -182,10 +195,6 @@ public class luigiScript : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         
-        if(Input.GetMouseButton(0)){    
-            keyDown = true;
-            speed = 2.5f;
-        }
         FirstPersonView.SetActive(staticVars.firstPerson);
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -193,7 +202,7 @@ public class luigiScript : MonoBehaviour
             StartCoroutine(SetFirstPerson());
         }
 
-        if (!characterController.isGrounded && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
+        if (!characterController.isGrounded && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             //StartCoroutine(SwordSlowJump(.1f));
             if (pressedAttack == false)
@@ -214,7 +223,7 @@ public class luigiScript : MonoBehaviour
         }
         
 
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
@@ -222,19 +231,19 @@ public class luigiScript : MonoBehaviour
             //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         }
-        else if (Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
             //_audioSource.clip = _doubleThrust;
             //_audioSource.PlayOneShot(_doubleThrust, 0.7F);
         }
-        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
+        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
             //_audioSource.clip = _forwardThrust;
             //_audioSource.PlayOneShot(_forwardThrust, 0.7F);
         }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0))//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
             //_audioSource.clip = _sideThrust;
@@ -283,6 +292,12 @@ public class luigiScript : MonoBehaviour
          
         yield return new WaitForSeconds(delay);
         Sword.SetActive(false);
+    }
+    IEnumerator FirstClick()
+    {
+
+        yield return new WaitForSeconds(.5f);
+        firstClick = true;
     }
     IEnumerator SetFirstPerson()
     { 
