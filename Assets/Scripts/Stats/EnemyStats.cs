@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : CharacterStats
-{
-    public event System.Action<int, int> OnHealthChanged;
+{  
     public override void Die()
     {
         base.Die();
@@ -33,27 +32,7 @@ public class EnemyStats : CharacterStats
         //add loot
     }
 
-
-    public override void TakeDamage(int damage)
-    {
-        damage -= armor.GetValue();
-        damage = Mathf.Clamp(damage, 0, int.MaxValue); // set limits to the damage variable;
-
-        currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + " damage.");
-
-        if (OnHealthChanged != null)
-        {
-            OnHealthChanged(maxHealth, currentHealth);
-            Debug.Log("Current health " + currentHealth);
-        }
-
-        if (currentHealth <= 0)
-        {
-            Die(); //for players, gameover/respawn; for enemies, drop loot and disappear
-        }
-
-    }
+     
 
     IEnumerator WaitToDie(float delay)
     {  
