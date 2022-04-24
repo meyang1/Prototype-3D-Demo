@@ -34,8 +34,9 @@ public class LevelManager : MonoBehaviour
 
 
     }
-    public void LoadNextScene(){ 
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
+    public void LoadNextScene()
+    {
+        StartCoroutine(NextScene(SceneManager.GetActiveScene().buildIndex+1));
         
     }
     public void LoadLastScene(){
@@ -62,6 +63,14 @@ public class LevelManager : MonoBehaviour
 
         this.GetComponent<AudioSource>().Pause();
         yield return new WaitForSeconds(.75f);
+        SceneManager.LoadSceneAsync(sceneIndex);
+    }
+    IEnumerator NextScene(int sceneIndex)
+    {
+        Fade.SetActive(true);
+
+        this.GetComponent<AudioSource>().Pause();
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 

@@ -6,11 +6,12 @@ using UnityEngine;
 public class backboundary : MonoBehaviour
 {
     public LevelManager lvlmanager;
-    public int sceneIndexBoundary; 
+    public int sceneIndexBoundary;
+    public bool checkDone;
     // Start is called before the first frame update
     void Start()
     {
-        
+        checkDone = false;
     }
 
     // Update is called once per frame
@@ -20,9 +21,10 @@ public class backboundary : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "PlayerCharacter") { 
+        if (collision.gameObject.name == "PlayerCharacter" && checkDone == false) { 
     
             lvlmanager.LoadScene(sceneIndexBoundary);
+            checkDone = true;
         }
     }
 }
