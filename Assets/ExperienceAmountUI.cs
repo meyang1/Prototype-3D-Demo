@@ -24,7 +24,7 @@ public class ExperienceAmountUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        expPercent = (float)staticVars.experienceAmount / 100;
+        expPercent = (float)staticVars.experienceAmount / staticVars.experienceAmountNeeded;
         expSlider.fillAmount = expPercent;
 
     }

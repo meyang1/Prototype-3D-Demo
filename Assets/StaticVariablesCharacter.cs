@@ -63,7 +63,7 @@ public class StaticVariablesCharacter : MonoBehaviour
     public Text levelText;
     public Text attackText;
     public Text speedText;
-    public Text defenseText;
+    public Text defenseText; 
 
     public void increaseHealth(int healthIncrease)
     {
@@ -175,5 +175,15 @@ public class StaticVariablesCharacter : MonoBehaviour
 
     public void CancelQuest()
     {
-    } 
+    }
+
+    public void SetFirstPerson()
+    {
+        StartCoroutine(FirstPerson());
+    }
+    IEnumerator FirstPerson()
+    {
+        yield return new WaitForSeconds(2f);
+        firstPersonCanvas.SetActive(!firstPersonCanvas.activeSelf);
+    }
 }
