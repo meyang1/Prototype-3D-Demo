@@ -61,11 +61,11 @@ public class luigiScript : MonoBehaviour
 
     void Update()
     {
-
+        firstClick = true;
         bool keyDown = false;
-        if (Input.GetMouseButton(0) && firstClick == false)
+        if (Input.GetMouseButton(0))// && firstClick == false)
         {
-            StartCoroutine(FirstClick());
+            //StartCoroutine(FirstClick());
             keyDown = true;
         }
 
@@ -133,17 +133,16 @@ public class luigiScript : MonoBehaviour
 
 
 
-        /*if (Input.GetMouseButton(0)&& firstClick == true)
+        if (Input.GetMouseButton(0))
         {
-            keyDown = true;
-            speed = 2.5f;
+            //keyDown = true;
+            //speed = 2.5f;
             Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode); 
         }
         else
         {
             Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode); 
-        }
-        */
+        } 
 
 
         
@@ -296,7 +295,7 @@ public class luigiScript : MonoBehaviour
     IEnumerator FirstClick()
     {
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0f);
         firstClick = true;
     }
     IEnumerator SetFirstPerson()

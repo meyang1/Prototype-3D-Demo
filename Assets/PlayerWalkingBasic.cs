@@ -30,6 +30,10 @@ public class PlayerWalkingBasic : MonoBehaviour
     public AudioClip _sideThrust;
     public AudioClip _doubleThrust;
     public AudioSource _audioSource;
+    public Texture2D cursorTextureClick;
+    public Texture2D cursorTextureDefault;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
 
 
     private Vector3 moveDirection = Vector3.zero;
@@ -61,6 +65,19 @@ public class PlayerWalkingBasic : MonoBehaviour
                 canJump = Time.time + timeTillJump;
 
             }
+
+
+            if (Input.GetMouseButton(0))
+            {
+                //keyDown = true;
+                //speed = 2.5f;
+                Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode);
+            }
+            else
+            {
+                Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode);
+            }
+
             /*if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
