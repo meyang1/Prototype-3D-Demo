@@ -121,7 +121,7 @@ public class luigiScript : MonoBehaviour
             TreesTest.SetActive(true);
         }
 
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode); 
         }
