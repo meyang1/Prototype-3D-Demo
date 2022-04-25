@@ -1,0 +1,10 @@
+Low Poly 3d Treasure Items Game Assets.
+
+Contents:
+
+.blend files
+.obj + .mtl files
+.fbx preview
+License: CC0
+
+Note: the models have no materials (yet)
