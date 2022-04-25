@@ -67,7 +67,7 @@ public class PlayerWalkingBasic : MonoBehaviour
             }
 
 
-            if (Input.GetMouseButton(0))
+           /* if (Input.GetMouseButton(0))
             {
                 //keyDown = true;
                 //speed = 2.5f;
@@ -77,7 +77,7 @@ public class PlayerWalkingBasic : MonoBehaviour
             {
                 Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode);
             }
-
+           */
             /*if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
