@@ -48,6 +48,8 @@ public class luigiScript : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
 
+    public Joystick joystick;
+
     void Start()
     {
         staticVars = StaticVariablesCharacter.Eyevon;
@@ -76,10 +78,26 @@ public class luigiScript : MonoBehaviour
 
             //speed = staticVars.speed;
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection *= speed;
+           // moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
+            Debug.Log("Horizontal");
+            Debug.Log(joystick.Horizontal.ToString()); 
+            Debug.Log("Vertical");
+            Debug.Log(joystick.Vertical.ToString());
+            // moveDirection *= speed;
+            if (joystick.Horizontal >= .2f)
+            {moveDirection *= speed;
+            }
+            else if(joystick.Horizontal<= -.2f)
+            {moveDirection *= speed;
+            }
+            else
+            {
+                moveDirection *= speed;
+            }
 
-            if (Input.GetButtonDown("Jump")&& Time.time > canJump)
+             
+            if (Input.GetButtonDown("Jump") || Input.touchCount == 2 && Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
                 canJump = Time.time + timeTillJump; 
@@ -137,11 +155,14 @@ public class luigiScript : MonoBehaviour
         {
             //keyDown = true;
             //speed = 2.5f;
-            Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode); 
+            //Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode);
+            Cursor.SetCursor(null, hotSpot, cursorMode);
         }
         else
         {
-            Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode); 
+            //Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode);
+
+            Cursor.SetCursor(null, hotSpot, cursorMode);
         } 
 
 
