@@ -23,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
         }      
     }
     void OnTriggerStay(Collider collision){
-        if(collision.gameObject.tag=="Player" && Input.GetKey(KeyCode.Space) && dialogueStarted==false)
+        if(collision.gameObject.tag=="Player" && Input.GetMouseButtonDown(0) && dialogueStarted==false)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             
@@ -32,7 +32,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" && dialogueStarted == true)
         {
-            if (Input.GetKey(KeyCode.Space) && Time.time > canRun)
+            if (Input.GetMouseButtonDown(0) && Time.time > canRun)
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 canRun = Time.time + 0.3f;

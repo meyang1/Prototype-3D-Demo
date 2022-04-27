@@ -16157,6 +16157,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_VerticalAxis.m_AccelTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
       propertyPath: m_HorizontalAxis.m_MaxSpeed
       value: 50
       objectReference: {fileID: 0}
@@ -16167,6 +16171,34 @@ PrefabInstance:
     - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
       propertyPath: m_HorizontalAxis.m_MinValue
       value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_HorizontalAxis.m_AccelTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_VerticalRecentering.m_enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_VerticalRecentering.m_WaitTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_HorizontalRecentering.m_enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_HorizontalRecentering.m_WaitTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_VerticalRecentering.m_RecenteringTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209059017973580692, guid: 47401666b787bf44b908718fb7f96083, type: 3}
+      propertyPath: m_HorizontalRecentering.m_RecenteringTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47401666b787bf44b908718fb7f96083, type: 3}

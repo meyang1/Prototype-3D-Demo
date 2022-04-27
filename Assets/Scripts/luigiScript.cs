@@ -102,7 +102,7 @@ public class luigiScript : MonoBehaviour
 
              
             //if (Input.GetButtonDown("Jump") || Input.touchCount == 2 && Time.time > canJump)
-            if(Input.touchCount>=1 && Time.time > canJump && checkJump == true)
+            if( Time.time > canJump && checkJump == true)
             {
                 moveDirection.y = jumpSpeed;
                 canJump = Time.time + timeTillJump; 
@@ -132,7 +132,7 @@ public class luigiScript : MonoBehaviour
         //speed = staticVars.speed;
 
 
-        if (Input.GetMouseButtonDown(0)&&Input.touchCount>1)//Input.GetKey(KeyCode.LeftShift))
+        if (checkRun && Input.touchCount>1)//Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4f;//3f;
             animator.speed = 1.5f;
@@ -212,7 +212,7 @@ public class luigiScript : MonoBehaviour
             StartCoroutine(SetFirstPerson());
         }
 
-        if (!characterController.isGrounded && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        if (!characterController.isGrounded && checkAttack && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             //StartCoroutine(SwordSlowJump(.1f));
             if (pressedAttack == false)
@@ -233,8 +233,7 @@ public class luigiScript : MonoBehaviour
         }
         
 
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) &&
-            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
@@ -242,22 +241,19 @@ public class luigiScript : MonoBehaviour
             //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         }
-        else if (Input.GetKey(KeyCode.A) &&
-            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.A) &&  checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
             //_audioSource.clip = _doubleThrust;
             //_audioSource.PlayOneShot(_doubleThrust, 0.7F);
         }
-        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) &&
-            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
             //_audioSource.clip = _forwardThrust;
             //_audioSource.PlayOneShot(_forwardThrust, 0.7F);
         }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) &&
-            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
             //_audioSource.clip = _sideThrust;

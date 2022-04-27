@@ -18,6 +18,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Health: " +  staticVars.currentHealth + "/" + staticVars.maxHealth;
+        scoreText.text = staticVars.currentHealth + "/" + staticVars.maxHealth;
     }
 }
