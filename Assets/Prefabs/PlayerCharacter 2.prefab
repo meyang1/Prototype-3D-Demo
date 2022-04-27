@@ -2032,6 +2032,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
+      propertyPath: dashButton
+      value: 
+      objectReference: {fileID: 6828008977680628139}
+    - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
       propertyPath: dashSpeedX
       value: 8
       objectReference: {fileID: 0}
@@ -2040,9 +2044,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
+      propertyPath: jumpButton
+      value: 
+      objectReference: {fileID: 4943582066341833767}
+    - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
       propertyPath: ActualSword
       value: 
       objectReference: {fileID: 3404027939242746795}
+    - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 3516021706302292832}
     - target: {fileID: 6240389524620890646, guid: 5d173b3544a0c864a8cdaa996cba5584, type: 3}
       propertyPath: timeTillDash
       value: 0.4

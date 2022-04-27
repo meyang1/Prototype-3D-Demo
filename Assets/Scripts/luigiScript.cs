@@ -21,6 +21,12 @@ public class luigiScript : MonoBehaviour
     public GameObject TreesTest;
     public GameObject ActualSword;
     public GameObject FirstPersonView;
+    public GameObject jumpButton;
+    public GameObject attackButton;
+    public GameObject dashButton;
+
+
+
 
     public float SwordDelay = 1.0f;
 
@@ -231,7 +237,20 @@ public class luigiScript : MonoBehaviour
             Debug.Log("Set Pressed Attack to false");
 
         }
-        
+
+        if (staticVars.firstPerson)
+        {
+            jumpButton.SetActive(false);
+            attackButton.SetActive(false);
+            dashButton.SetActive(false);
+        }
+        else
+        {
+            jumpButton.SetActive(true);
+            attackButton.SetActive(true);
+            dashButton.SetActive(true);
+
+        }
 
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {

@@ -326,7 +326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10434999}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.062137436, y: 0, z: 0, w: 0.9980676}
   m_LocalPosition: {x: -3.32, y: 11.12, z: -10.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -69788,6 +69788,10 @@ PrefabInstance:
       value: 356.26
       objectReference: {fileID: 0}
     - target: {fileID: 4933648483358809913, guid: afed43d56a0cdc54bb4c94338a9c9b46, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -426.13995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933648483358809913, guid: afed43d56a0cdc54bb4c94338a9c9b46, type: 3}
       propertyPath: m_LocalPosition.z
       value: -329
       objectReference: {fileID: 0}
@@ -69805,7 +69809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933648483358809913, guid: afed43d56a0cdc54bb4c94338a9c9b46, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3729
+      value: 3337.5154
       objectReference: {fileID: 0}
     - target: {fileID: 4933648483358809913, guid: afed43d56a0cdc54bb4c94338a9c9b46, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -69904,7 +69908,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7455288910596461345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.062137436, y: 0, z: 0, w: 0.9980676}
   m_LocalPosition: {x: -3.32, y: 11.12, z: -10.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -69971,7 +69975,7 @@ GameObject:
   - component: {fileID: 7455288911378590893}
   - component: {fileID: 7455288911378590867}
   - component: {fileID: 7455288911378590866}
-  - component: {fileID: 9209059017815618389}
+  - component: {fileID: 7455288911378590895}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -69979,6 +69983,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7455288911378590895
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455288911378590894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7710286182282073569
 GameObject:
   m_ObjectHideFlags: 0
@@ -70275,65 +70291,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710286183354189218}
   m_CullTransparentMesh: 1
---- !u!114 &9209059017815618389
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7455288911378590894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9beda531928fc40968802117a5d256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RecenterTarget: 0
-  m_VerticalAxis:
-    Value: 0
-    m_SpeedMode: 0
-    m_MaxSpeed: 50
-    m_AccelTime: 1
-    m_DecelTime: 0.1
-    m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
-    m_InvertInput: 1
-    m_MinValue: -70
-    m_MaxValue: 70
-    m_Wrap: 0
-    m_Recentering:
-      m_enabled: 0
-      m_WaitTime: 1
-      m_RecenteringTime: 2
-      m_LegacyHeadingDefinition: -1
-      m_LegacyVelocityFilterStrength: -1
-  m_VerticalRecentering:
-    m_enabled: 1
-    m_WaitTime: 0.4
-    m_RecenteringTime: 1
-    m_LegacyHeadingDefinition: -1
-    m_LegacyVelocityFilterStrength: -1
-  m_HorizontalAxis:
-    Value: 0
-    m_SpeedMode: 0
-    m_MaxSpeed: 50
-    m_AccelTime: 1
-    m_DecelTime: 0.1
-    m_InputAxisName: Mouse X
-    m_InputAxisValue: 0
-    m_InvertInput: 0
-    m_MinValue: -60
-    m_MaxValue: 60
-    m_Wrap: 0
-    m_Recentering:
-      m_enabled: 0
-      m_WaitTime: 1
-      m_RecenteringTime: 2
-      m_LegacyHeadingDefinition: -1
-      m_LegacyVelocityFilterStrength: -1
-  m_HorizontalRecentering:
-    m_enabled: 1
-    m_WaitTime: 0.4
-    m_RecenteringTime: 1
-    m_LegacyHeadingDefinition: -1
-    m_LegacyVelocityFilterStrength: -1
-  m_ApplyBeforeBody: 0
