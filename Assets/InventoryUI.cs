@@ -21,7 +21,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf); // reverse active state 
+            SetUIActive(); // reverse active state 
         }
     }
 
@@ -38,5 +38,10 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
+    }
+
+    public void SetUIActive()
+    {
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 }

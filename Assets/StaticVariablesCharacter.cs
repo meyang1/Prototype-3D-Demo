@@ -49,6 +49,8 @@ public class StaticVariablesCharacter : MonoBehaviour
     public Text experienceText;
     public Text goldText;
 
+    public GameObject inventoryUI;
+
 
     public Quest quest;
 
@@ -185,5 +187,10 @@ public class StaticVariablesCharacter : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         firstPersonCanvas.SetActive(!firstPersonCanvas.activeSelf);
+    }
+
+    public void SetUIActive()
+    {
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 }

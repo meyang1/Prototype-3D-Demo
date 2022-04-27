@@ -44,7 +44,11 @@ public class luigiScript : MonoBehaviour
     public Texture2D cursorTextureClick;
     public Texture2D cursorTextureDefault;
     public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero; 
+    public Vector2 hotSpot = Vector2.zero;
+    public bool checkJump = false;
+    public bool checkAttack = false;
+    public bool checkRun = false;
+    public bool checkBag = false;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -97,11 +101,11 @@ public class luigiScript : MonoBehaviour
             }
 
              
-            if (Input.GetButtonDown("Jump") || Input.touchCount == 2 && Time.time > canJump)
+            //if (Input.GetButtonDown("Jump") || Input.touchCount == 2 && Time.time > canJump)
+            if(Input.touchCount>=1 && Time.time > canJump && checkJump == true)
             {
                 moveDirection.y = jumpSpeed;
                 canJump = Time.time + timeTillJump; 
-
             }
             /*if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
             {
@@ -116,7 +120,6 @@ public class luigiScript : MonoBehaviour
                 canJump = Time.time + .24f; 
             }*/
 
-
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -129,7 +132,7 @@ public class luigiScript : MonoBehaviour
         //speed = staticVars.speed;
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetMouseButtonDown(0)&&Input.touchCount>1)//Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4f;//3f;
             animator.speed = 1.5f;
@@ -150,30 +153,17 @@ public class luigiScript : MonoBehaviour
         }
 
 
-
-        if (Input.GetMouseButton(0))
-        {
-            //keyDown = true;
-            //speed = 2.5f;
-            //Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode);
-            Cursor.SetCursor(null, hotSpot, cursorMode);
-        }
-        else
-        {
-            //Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode);
-
-            Cursor.SetCursor(null, hotSpot, cursorMode);
-        } 
-
-
+         
+        Cursor.SetCursor(null, hotSpot, cursorMode);
+         
         
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)|| joystick.Vertical >= .2f)
         {
             animator.SetInteger("AnimState", 0); //Left
             keyDown = true;
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
         } 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)|| joystick.Vertical <= -.2f)
         {
             animator.SetInteger("AnimState", 0);
             keyDown = true;
@@ -181,12 +171,12 @@ public class luigiScript : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
         } 
         
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)|| joystick.Horizontal >= .2f)
         {
             animator.SetInteger("AnimState", 1); //Right
             staticVars.firstPersonAnimator.SetInteger("AnimState", 1);
             keyDown = true;
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (checkRun)//Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if (Time.time > canJump)
                 {
@@ -198,12 +188,12 @@ public class luigiScript : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A)|| joystick.Horizontal <= -.2f)
         {
             animator.SetInteger("AnimState", 2);
             staticVars.firstPersonAnimator.SetInteger("AnimState", 2);
             keyDown = true;
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (checkRun)//Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if (Time.time > canJump)
                 {
@@ -243,7 +233,8 @@ public class luigiScript : MonoBehaviour
         }
         
 
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) &&
+            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             Sword.GetComponent<Renderer>().enabled = true;
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
@@ -251,19 +242,22 @@ public class luigiScript : MonoBehaviour
             //_audioSource.PlayOneShot(_sideThrust, 0.7F);
 
         }
-        else if (Input.GetKey(KeyCode.A) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.A) &&
+            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 2);
             //_audioSource.clip = _doubleThrust;
             //_audioSource.PlayOneShot(_doubleThrust, 0.7F);
         }
-        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) &&
+            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 3);
             //_audioSource.clip = _forwardThrust;
             //_audioSource.PlayOneShot(_forwardThrust, 0.7F);
         }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButtonDown(0) && firstClick == true)//Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) &&
+            Input.touchCount >= 1 && checkAttack == true && firstClick == true)//Input.GetKeyDown(KeyCode.F))
         {
             ActualSword.GetComponent<Animator>().SetInteger("AnimState", 1);
             //_audioSource.clip = _sideThrust;
@@ -305,6 +299,9 @@ public class luigiScript : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.Escape) && menuOpen == false){
             menuOpen = false;
         }
+        checkAttack = false;
+        checkJump = false;
+        checkRun = false;
     }
     IEnumerator SetSword(float delay)
     {
@@ -378,5 +375,21 @@ public class luigiScript : MonoBehaviour
         }
 
     }
-
+    public void SetCheckJump()
+    {
+        checkJump = true; 
+    }
+    public void SetCheckAttack()
+    {
+        checkAttack = true;
+    }
+    public void SetCheckRun()
+    {
+        checkRun = true;
+    }
+    public void OpenBag()
+    {
+        staticVars.SetFirstPerson();
+        staticVars.firstPerson = !staticVars.firstPerson;
+    }
 }
