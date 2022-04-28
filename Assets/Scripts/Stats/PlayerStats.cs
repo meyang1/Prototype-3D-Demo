@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     StaticVariablesCharacter staticVars;
+    public Animator animator;
     public event System.Action<int, int> OnHealthChanged;
     // Start is called before the first frame update
     void Start()
@@ -43,11 +44,16 @@ public class PlayerStats : CharacterStats
         //currentHealth -= damage;
         staticVars.currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
+        StartCoroutine(SetHealthCanvas(1));
 
         if (OnHealthChanged != null)
         {
             OnHealthChanged(staticVars.maxHealth, staticVars.currentHealth);
             Debug.Log("Player health " + staticVars.currentHealth);
+        }
+        else
+        {
+
         }
 
         if (staticVars.currentHealth <= 0)
@@ -59,7 +65,8 @@ public class PlayerStats : CharacterStats
 
     }
     public virtual void HealDamage(int heal)
-    { 
+    {
+        StartCoroutine(SetHealthCanvas(2));
         heal += staticVars.currentHealth;
         heal = Mathf.Clamp(heal, 0, staticVars.maxHealth);
         //currentHealth = heal;
@@ -72,5 +79,14 @@ public class PlayerStats : CharacterStats
         base.Die();
         // Kill the player --> death animation, game over screen, respawn prompt, etc...
         PlayerManager.instance.KillPlayer();
+    }
+    IEnumerator SetHealthCanvas(int animInt)
+    {
+        animator.SetInteger("AnimState", animInt);
+        yield return new WaitForSeconds(1f);
+        //_audioSource.PlayOneShot(_sideThrust, 0.7F);
+
+        animator.SetInteger("AnimState", 0);
+
     }
 }
