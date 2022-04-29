@@ -137,15 +137,15 @@ public class luigiScript : MonoBehaviour
         {
             //keyDown = true;
             //speed = 2.5f;
-            Cursor.SetCursor(cursorTextureClick, hotSpot, cursorMode); 
+            Cursor.SetCursor(null, hotSpot, cursorMode); 
         }
         else
         {
-            Cursor.SetCursor(cursorTextureDefault, hotSpot, cursorMode); 
-        } 
+            Cursor.SetCursor(null, hotSpot, cursorMode); 
+        }
 
+        Cursor.visible = false;
 
-        
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("AnimState", 0); //Left
