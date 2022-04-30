@@ -34,9 +34,9 @@ public class LevelManager : MonoBehaviour
 
 
     }
-    public void LoadNextScene()
+    public void LoadNextScene(int sceneIndex)
     {
-        StartCoroutine(NextScene(SceneManager.GetActiveScene().buildIndex+1));
+        StartCoroutine(NextScene(sceneIndex));
         
     }
     public void LoadLastScene(){
@@ -73,5 +73,6 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
+     
 
 }
