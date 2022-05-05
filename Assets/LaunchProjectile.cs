@@ -7,6 +7,7 @@ public class LaunchProjectile : MonoBehaviour
     public GameObject projectile;
     public float launchVelocity = 700f;  
     private float canShoot = 0f;
+    public float lengthBeforeDestroy = .4f;
     public float timeTillShoot;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,6 @@ public class LaunchProjectile : MonoBehaviour
         ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                                          (0, launchVelocity, 0));
 
-        Destroy(ball, .4f);
+        Destroy(ball, lengthBeforeDestroy);
     }
 }

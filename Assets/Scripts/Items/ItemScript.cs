@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemScript : MonoBehaviour
 {
     private bool passed = false;
-    public Item item;
+    public Item item; 
 
     public Text m_MyText;
     //public static int numberHeld;
