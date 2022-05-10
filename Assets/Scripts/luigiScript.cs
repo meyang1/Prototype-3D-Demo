@@ -214,7 +214,6 @@ public class luigiScript : MonoBehaviour
         FirstPersonView.SetActive(staticVars.firstPerson);
         if (Input.GetKeyDown(KeyCode.F))
         {
-            staticVars.firstPerson = !staticVars.firstPerson;
             StartCoroutine(SetFirstPerson());
         }
 
@@ -331,8 +330,14 @@ public class luigiScript : MonoBehaviour
         yield return new WaitForSeconds(0f);
         firstClick = true;
     }
+    public void FirstPerson()
+    {
+        StartCoroutine(SetFirstPerson());
+
+    }
     IEnumerator SetFirstPerson()
-    { 
+    {
+        staticVars.firstPerson = !staticVars.firstPerson;
         yield return new WaitForSeconds(2f); 
         staticVars.firstPersonCanvas.SetActive(staticVars.firstPerson);
     }
