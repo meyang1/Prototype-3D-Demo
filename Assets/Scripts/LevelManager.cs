@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadAsynchronously (int sceneIndex){
 
+        Time.timeScale = 1f;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while(!operation.isDone){
             Debug.Log(operation.progress);
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
     
     public void LoadScene(int sceneIndex)
     {
+        Time.timeScale = 1f;
         Fade.GetComponent<Animator>().SetInteger("AnimState", 1);
         StartCoroutine(WaitSec(sceneIndex)); 
 
@@ -36,11 +38,14 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextScene(int sceneIndex)
     {
+        Time.timeScale = 1f;
         StartCoroutine(NextScene(sceneIndex));
         
     }
-    public void LoadLastScene(){
-        
+    public void LoadLastScene()
+    {
+        Time.timeScale = 1f;
+
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex-1);
         
     }
@@ -67,6 +72,7 @@ public class LevelManager : MonoBehaviour
     }
     IEnumerator NextScene(int sceneIndex)
     {
+        Time.timeScale = 1f;
         Fade.SetActive(true);
 
         this.GetComponent<AudioSource>().Pause();
