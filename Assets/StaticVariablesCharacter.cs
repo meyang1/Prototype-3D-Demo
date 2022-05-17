@@ -124,7 +124,11 @@ public class StaticVariablesCharacter : MonoBehaviour
             {
                 questTypeProgress.text = quest.goal.currentAmount.ToString() + "/" + quest.goal.requiredAmount.ToString() + " Items";
             }
-            //else if(quest.goal.goalType == GoalType.Reach)
+            else if(quest.goal.goalType == GoalType.Reach)
+            {
+                questTypeProgress.text = "Reach the Node Tree";
+            }
+
             else
             {
                 questTypeProgress.text = "None";
