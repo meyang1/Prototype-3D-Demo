@@ -37,6 +37,7 @@ public class luigiScript : MonoBehaviour
 
     public float timeTillJump = 0f ;
     public float timeTillDash = 1f;
+    public GameObject myCam;
     public AudioClip _forwardThrust;
     public AudioClip _sideThrust;
     public AudioClip _doubleThrust;
@@ -56,7 +57,8 @@ public class luigiScript : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
 
-        _audioSource = GetComponent<AudioSource>(); 
+        _audioSource = GetComponent<AudioSource>();
+        myCam = GameObject.Find("Main Camera");
     }
 
     void Update()
@@ -68,21 +70,22 @@ public class luigiScript : MonoBehaviour
             //StartCoroutine(FirstClick());
             keyDown = true;
         }
-
         if (characterController.isGrounded)
         {
             // We are grounded, so recalculate
             // move direction directly from axes
 
             //speed = staticVars.speed;
+            moveDirection = new Vector3(0.0f, 0.0f, 0.0f);
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
             if (Input.GetButtonDown("Jump")&& Time.time > canJump)
             {
                 moveDirection.y = jumpSpeed;
-                canJump = Time.time + timeTillJump; 
+                canJump = Time.time + timeTillJump;
+                moveDirection.y -= gravity * Time.deltaTime;
+                characterController.Move(moveDirection * Time.deltaTime);
 
             }
             /*if (Input.GetKeyDown(KeyCode.E)&& Time.time > canJump)
@@ -101,16 +104,38 @@ public class luigiScript : MonoBehaviour
 
         }
 
+        
+
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
         // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
         //speed = staticVars.speed;
+        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        Vector3 Movement = myCam.transform.right * Horizontal + myCam.transform.forward * Vertical;
+        Movement.y = 0f;
 
 
+        
+        characterController.Move(Movement);
+
+        if (Movement.magnitude != 0f)
+        {
+            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * Time.deltaTime);
+
+
+            Quaternion CamRotation = myCam.transform.rotation;
+            CamRotation.x = 0f;
+            CamRotation.z = 0f; 
+            transform.rotation = Quaternion.Lerp(transform.rotation, CamRotation, 0.1f);
+
+        }
+
+        characterController.Move(moveDirection * Time.deltaTime);
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4f;//3f;
