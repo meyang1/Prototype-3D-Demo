@@ -195,7 +195,7 @@ public class luigiScript : MonoBehaviour
                 if (Time.time > canJump)
                 {
                     moveDirection.y = dashSpeedY;
-                    moveDirection.x = dashSpeedX;
+                    moveDirection.x = dashSpeedX * Horizontal *5;
                     canJump = Time.time + timeTillDash;
                 }
             }
@@ -212,7 +212,7 @@ public class luigiScript : MonoBehaviour
                 if (Time.time > canJump)
                 {
                     moveDirection.y = dashSpeedY;
-                    moveDirection.x = -dashSpeedX;
+                    moveDirection.x = dashSpeedX*Horizontal*5;
                     canJump = Time.time + timeTillDash;
                 }
             }
